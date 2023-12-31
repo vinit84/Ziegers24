@@ -1,12 +1,12 @@
-import logo from "./ZiegersLogo.png";
-import stars from "./stars.png";
-import stroke from "./strokes.png";
-import sphere1 from "./planet.png";
-import sphere2 from "./planet2.svg";
-import sphere3 from "./planet3.svg";
-import globe from "./globe.svg";
+import logo from "../../src/assets/ZiegersLogo.png";
+import stars from "../../src/assets/stars.png";
+import stroke from "../../src/assets/strokes.png";
+import sphere1 from "../../src/assets/planet.png";
+import sphere2 from "../../src/assets/planet2.svg";
+import sphere3 from "../../src/assets/planet3.svg";
+import globe from "../../src/assets/globe.svg";
 import { useNavigate } from "react-router-dom";
-import transition from "./transition";
+import transition from "../transition";
 
 function Home() {
   const navigate = useNavigate();

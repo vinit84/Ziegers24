@@ -1,5 +1,5 @@
 import React from 'react'
-import transition from './transition'
+import transition from '../transition'
 
 const Eventpage = () => { 
   return (
