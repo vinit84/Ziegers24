@@ -6,6 +6,7 @@ import Eventpage from './components/Eventpage';
 
 
 function App() {
+  
   const location = useLocation();
   return (
     <>
@@ -19,6 +20,10 @@ function App() {
 
   );
 }
+
+
+
+
 
 
 
