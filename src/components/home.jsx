@@ -15,7 +15,7 @@ function Home() {
   };
 
   return (
-    <div className="wrapper relative overflow-x-hidden font-varino">
+    <div className="wrapper relative overflow-hidden font-varino">
       <div className="bgstyle"></div>
       <img
         src={stars}
