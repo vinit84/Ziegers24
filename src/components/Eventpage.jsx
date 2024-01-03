@@ -111,7 +111,7 @@ const Eventpage = () => {
       </div> */}
 
       <div className="flex flex-row justify-center">
-        <div className="flex flex-col mx-auto absolute z-10 mt-32">
+        <div className="flex flex-col mx-auto absolute z-10 top-[7rem]">
           <div className="flex flex-row mx-auto justify-between items-center ">
             <div onClick={handleGamecardClick} className="flex justify-center items-center align-middle pr-3 cursor-pointer ">
               <img
