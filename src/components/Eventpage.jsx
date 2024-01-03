@@ -1,12 +1,13 @@
 import React from "react";
 import transition from "../transition";
-import Navbar from "./Navbar.jsx";
+import Navbar from "./navbar.jsx";
 import WebdevCard from "../assets/WebdevCard.png";
 import gamecard from "../assets/gamecard.png";
 import technutzcard from "../assets/technutzcard.png";
 import codexcard from "../assets/codexcard.png";
 import VanillaTilt from "vanilla-tilt";
-import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react"; 
 
 const Eventpage = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -15,6 +16,12 @@ const Eventpage = () => {
   const [showThirdCard, setShowThirdCard] = useState(false);
   const [showFourthCard, setShowFourthCard] = useState(false);
   const mainRef = useRef(null);
+
+  const navigate = useNavigate();
+
+  const handleGamecardClick = () => {
+    navigate("/gamingpage");
+  };
 
   useEffect(() => {
     const createDiv = () => {
@@ -76,6 +83,8 @@ const Eventpage = () => {
     }, 3000);
   }, []);
 
+  
+
   return (
     <div>
       {showNavbar && <Navbar />}
@@ -101,33 +110,35 @@ const Eventpage = () => {
        
       </div> */}
 
-      <div className="flex flex-col mx-auto absolute z-10 ml-[10rem]">
-        <div className="flex flex-row mx-auto mt-[5rem] justify-between items-center ">
-          <div className="flex justify-center items-center align-middle pr-3  ">
-            <img
-              src={gamecard}
-              className={`w-[33rem]  card1 tilt ${showFirstCard ? "show" : ""}`}
-            />
+      <div className="flex flex-row justify-center">
+        <div className="flex flex-col mx-auto absolute z-10 mt-32">
+          <div className="flex flex-row mx-auto justify-between items-center ">
+            <div onClick={handleGamecardClick} className="flex justify-center items-center align-middle pr-3 cursor-pointer ">
+              <img
+                src={gamecard} alt="gamecard"
+                className={`w-[33rem]  card1 tilt ${showFirstCard ? "show" : ""}`}
+              />
+            </div>
+            <div className="flex justify-center items-center align-middle cursor-pointer">
+              <img
+                src={technutzcard} alt="technutzcard"
+                className={`w-[33rem] card2 tilt ${showSecondCard ? "show" : ""}`}
+              />
+            </div>
           </div>
-          <div className="flex justify-center items-center align-middle">
-            <img
-              src={technutzcard}
-              className={`w-[33rem] card2 tilt ${showSecondCard ? "show" : ""}`}
-            />
-          </div>
-        </div>
-        <div className="flex flex-row mx-auto pt-3 justify-between items-center">
-          <div className="flex justify-center items-center align-middle pr-3">
-            <img
-              src={codexcard}
-              className={`w-[33rem] card3 tilt ${showThirdCard ? "show" : ""}`}
-            />
-          </div>
-          <div className="flex justify-center items-center align-middle">
-            <img
-              src={WebdevCard}
-              className={`w-[33rem] card4  tilt ${showFourthCard ? "show" : ""}`}
-            />
+          <div className="flex flex-row mx-auto pt-3 justify-between items-center">
+            <div className="flex justify-center items-center align-middle pr-3 cursor-pointer">
+              <img
+                src={codexcard} alt="codexcard"
+                className={`w-[33rem] card3 tilt ${showThirdCard ? "show" : ""}`}
+              />
+            </div>
+            <div className="flex justify-center items-center align-middle cursor-pointer">
+              <img
+                src={WebdevCard} alt="WebdevCard"
+                className={`w-[33rem] card4  tilt ${showFourthCard ? "show" : ""}`}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router , Routes , Route} from "react-router-dom";
 import Eventpage from './components/Eventpage';
+import Gamingpage from './components/Gamingpage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Routes>
         <Route path="/*" element = {<App/>}/>
         <Route path="/eventspage" element={<Eventpage/>}/>
+        <Route path="/gamingpage" element={<Gamingpage/>} />
       </Routes>
     </Router>
     

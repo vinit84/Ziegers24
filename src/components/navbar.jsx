@@ -6,7 +6,7 @@ function navbar () {
         className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-5 pl-10  top-1 justify-between "
         style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
       >
-        <a href="" className="font-varino text-focus-in">
+        <a href="h" className="font-varino text-focus-in">
           Contact
         </a>
         <svg
@@ -28,7 +28,7 @@ function navbar () {
             />
           </g>
         </svg>
-        <a href="" className="font-varino ml-3 text-focus-in">
+        <a href="h" className="font-varino ml-3 text-focus-in">
           About
         </a>
         <svg
@@ -58,7 +58,7 @@ function navbar () {
         </a>
 
         <a
-          href=""
+          href="h"
           className="text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[3rem] bg-gradient-to-r from-zinc-950 to-blue-900 rounded-full shadow border border-blue-900 justify-start items-center inline-flex instagram-button"
         >
           <div className="w-4 h-4 relative flex-col justify-start items-start flex " />

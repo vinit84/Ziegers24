@@ -2,8 +2,15 @@
   font-family: varino;
   src: url(../public/VarinonormalRegular-nRYg4.otf);
 }
+@font-face {
+  font-family: readex;
+  src: url(../public/ReadexPro-VariableFont_HEXP\,wght.ttf);
+}
 .Varino {
   font-family: varino;
+}
+.Readex{
+  font-family: readex;
 }
 * {
   margin: 0;
@@ -14,7 +21,7 @@
   position: relative;
   background-color: #0a0a0b;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   box-shadow: 25px 26px 6.1px 0px rgba(0, 0, 0, 0.65);
 }
 .spotlight {
@@ -36,7 +43,7 @@
   background: linear-gradient(150deg, #265350 12.28%, #000 80%);
 }
 
-.ziegers {
+.ziegers2024 {
   background: linear-gradient(98deg, #4a3afe 0%, #00c2ff 52.4%, #20fa0d 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -77,32 +84,6 @@
   }
 }
 
-@keyframes blobAnimate {
-  0% {
-    top: 50%;
-    left: 50%;
-  }
-  20% {
-    top: 51%;
-    left: 51%;
-  }
-  40% {
-    top: 50%;
-    left: 50%;
-  }
-  60% {
-    top: 51%;
-    left: 50%;
-  }
-  80% {
-    top: 48%;
-    left: 51%;
-  }
-  100% {
-    top: 50%;
-    left: 50%;
-  }
-}
 .bgstyle {
   background-color: black;
   background-image: radial-gradient(
@@ -122,7 +103,7 @@
 }
 
 /* stars animation */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -176,7 +157,7 @@ body {
     transform: translateZ(0vmin) rotateY(90deg) rotateX(var(--rx))
       translateZ(var(--x)) scaleX(6);
   }
-}
+} */
 
 .slide-in {
   position: fixed;
@@ -603,4 +584,93 @@ body {
   border-radius: 52px;
   width: 33rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+@media only screen and (max-width: 600px){
+  .bgstyle{
+    background-color: black;
+    background-image: radial-gradient(circle, #FFF 0%, #FFF 15%, #38E7FF 30%, #60B3FF 45%, #1d3f55 69%, #0e171d 77%, #000 85%);
+    height: 100vh;
+    width: 100vw;
+    max-height: 100vh;
+    backdrop-filter: blur(50px);
+  }
+  .strokes{
+    width: 93%;
+    height: 47%;
+    position: absolute;
+    top: 0;
+    margin-top: 10rem;
+  }
+  .hero-section{
+    position: absolute;
+    top: 13.5%;
+  }
+  .ziegers2024{
+    font-size: 40px;
+    padding-top: 20px;
+  }
+  .ziegers-text{
+    font-size: 18px;
+  }
+  .register-button{
+    margin-top: 35px;
+  }
+  .topleft{
+    height: 40px;
+    width: 40px;
+    left: 60px;
+    top: 36.7rem;
+    transform: rotate(-35deg);
+  }
+  .middleleft{
+    height: 17px;
+    width: 17px;
+    left: 10px;
+    bottom: 12rem;
+    transform: rotate(-5deg);
+  }
+  .bottomleft{
+    height: 80px;
+    width: 80px;
+    bottom: 4.6rem;
+    left: 60px;
+    transform: rotate(-35deg);
+  }
+  .topright{
+    height: 80px;
+    width: 80px;
+    top: 35.7rem;
+    right: 35px;
+    transform: rotate(-100deg);
+  }
+  .bottomright{
+    height: 40px;
+    width: 40px;
+    right: 60px;
+    bottom: 4.6rem;
+    transform: rotate(20deg);
+  }
+  .middleright{
+    height: 17px;
+    width: 17px;
+    right: 10px;
+    bottom: 8.4rem;
+    transform: rotate(-100deg);
+  }
+  .stars{
+    height: 17.6rem;
+    width: 26rem;
+    left:1rem;
+    top: 36rem;
+    backdrop-filter: blur(5px);
+  }
+}
+
+.gaming{
+  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-blend-mode: normal, normal, luminosity;
 }
