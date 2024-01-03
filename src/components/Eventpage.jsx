@@ -111,9 +111,9 @@ const Eventpage = () => {
       </div> */}
 
       <div className="flex flex-row justify-center">
-        <div className="flex flex-col mx-auto absolute z-10 mt-32">
-          <div className="flex flex-row mx-auto justify-between items-center ">
-            <div onClick={handleGamecardClick} className="flex justify-center items-center align-middle pr-3 cursor-pointer ">
+        <div className="flex flex-col lg:m-[5rem] absolute z-10">
+          <div className="flex flex-row  items-center justify-between lg:gap-4 m-card1">
+            <div onClick={handleGamecardClick} className="flex justify-center items-center align-middle  cursor-pointer ">
               <img
                 src={gamecard} alt="gamecard"
                 className={`w-[33rem]  card1 tilt ${showFirstCard ? "show" : ""}`}
@@ -126,8 +126,8 @@ const Eventpage = () => {
               />
             </div>
           </div>
-          <div className="flex flex-row mx-auto pt-3 justify-between items-center">
-            <div className="flex justify-center items-center align-middle pr-3 cursor-pointer">
+          <div className="flex flex-row lg:pt-3 lg:gap-4 justify-between items-center m-card2">
+            <div className="flex justify-center items-center align-middle cursor-pointer">
               <img
                 src={codexcard} alt="codexcard"
                 className={`w-[33rem] card3 tilt ${showThirdCard ? "show" : ""}`}

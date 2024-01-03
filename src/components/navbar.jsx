@@ -6,7 +6,7 @@ function navbar () {
         className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-5 pl-10  top-1 justify-between "
         style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
       >
-        <a href="h" className="font-varino text-focus-in">
+        <a href="h" className="font-varino text-focus-in nav-text">
           Contact
         </a>
         <svg
@@ -28,7 +28,7 @@ function navbar () {
             />
           </g>
         </svg>
-        <a href="h" className="font-varino ml-3 text-focus-in">
+        <a href="h" className="font-varino ml-3 text-focus-in nav-text">
           About
         </a>
         <svg
@@ -51,7 +51,7 @@ function navbar () {
           </g>
         </svg>
         <a href="/"
-          className="font-varino font-bold mx-auto text-xl translate-x-[-2.7rem] text-focus-in"
+          className="font-varino font-bold mx-auto text-xl translate-x-[-2.7rem] text-focus-in logo-text"
           style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.8)" }}
         >
           ZIEGERS
@@ -78,7 +78,7 @@ function navbar () {
                 />
               </g>
             </svg>
-            <h1 className="ml-2">Instagram</h1>
+            <h1 className="ml-2 m-insta">Instagram</h1>
           </div>
         </a>
       </nav>
