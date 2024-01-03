@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Navbar from './Navbar.jsx';
 
 const gamingpage = () => {
   return (
-    <div>gamingpage</div>
-  )
-}
+    <div>
+      <Navbar />
+      gamingpage
+    </div>
+  );
+};
 
-export default gamingpage
+export default gamingpage;

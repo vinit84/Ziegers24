@@ -1,10 +1,10 @@
 import React from 'react'
 
-const navbar = () => {
+function navbar () {
   return (
     <nav
-        className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-5 pl-10  top-1 justify-between .nav-bar"
-        style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 1 }}
+        className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-5 pl-10  top-1 justify-between "
+        style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
       >
         <a href="" className="font-varino text-focus-in">
           Contact
@@ -85,4 +85,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default navbar;
