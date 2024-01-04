@@ -4,7 +4,7 @@ import transition from "../../transition.js";
 
 const Valorant = () => {
   return (
-    <div>
+    <div className="wrapper ">
       <nav
         className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between bg-[#000000CC] rounded-es-[100px] rounded-br-[100px] bg-opacity-80 absolute"
         style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
@@ -91,7 +91,7 @@ const Valorant = () => {
           </div>
         </a>
       </nav>
-      <div className="wrapper overflow-x-hidden font-varino">
+      <div className="font-varino">
         <div>
           <div className="flex justify-end ">
             <svg
@@ -232,8 +232,64 @@ const Valorant = () => {
           <img
             src={banner}
             alt="valorantbanner"
-            className="flex w-screen h-screen"
+            className="flex w-screen"
           ></img>
+          <div className="w-[100vw] h-[419px] absolute valorantbanneroverlay top-[35rem] -z-1"></div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-center gap-[40px] items-center max-w-[950px] mx-auto mt-52 mb-20">
+        <div className="text-[21px] font-inter text-center text-[#D4D4D4] tracking-[1.15px] font-medium ">
+          Valorant LAN tournament is a competitive event featuring some of the best teams competing against each other 
+          in the popular first-person shooter game, Valorant. The tournament will be played in a LAN (Local Area Network) 
+          setup, where all the participating teams will be physically present in the same location to play their matches. 
+          The tournament will feature a prize pool for the winning team. It aims to bring together the best teams and fans 
+          of Valorant to showcase their skills and enjoy the game together in a face to face environment which will add an 
+          extra layer of excitement and pressure.
+        </div>
+        <div className="font-varino text-[90px] tracking-[4.9px] text-center valorantrules">RULES</div>
+        <div className="rulescard">
+          <ul className="p-[45px_40px] flex flex-col text-left gap-3 text-[#D4D4D4] text-[20px] font-inter" style={{ listStyleType: 'disc' }}>
+            <li> Players competing in the Ziegers 2024 tournament for Valorant, The Server will be LAN.</li>
+            <li> Any form of abuse of any staff member is prohibited. If a user does abuse a staff member, that user risks a disqualification from the match.</li>
+            <li> Tournament bracket size and prize are subject to change depending on the total number of eligible teams at the start of a tournament</li>
+            <li> After a Private Match has been created, only players on the (2) teams and Ziegers Staff members may be invited/join. If a player that is not a 
+            registered member of one of the teams (ineligible player) joins a game, the game must be ended. If a player is found to have invited an ineligible 
+            player to a game, a forfeit may be issued.</li>
+            <li> If a player lags out during the first 30 seconds the game should be ended and restarted for all game modes unless damage is inflicted by the opposing team prior to said time.</li>
+            <li> If a player lags out after the first 30 seconds and/or after the first kill (damage inflicted), the match must continue.</li>
+            <li> Any form of cheating, using a glitch, abusing in-game mechanics, or unsportsmanlike behavior may result in a forfeit of the game.</li>
+            <li> Ziegers reserves the right to broadcast any match.</li>
+            <li> Third party communication is not allowed for this tournament. However, players are allowed to leave the current party and form a new one 
+            with their teammates only after the match has begun.</li>
+            <li> If your team is competing in multiple Ziegers events at once, your team has 20 minutes from the scheduled match time to play the match 
+            or your team risks being reported as a no show which can lead to a forfeit of the match or being forced to playing man down.</li>
+            <li> Tournament matches are expected to be played at the scheduled match time. If an opposing team fails to show up after 10 
+            minutes after the scheduled match time, the team will be disqualified under a No Show.</li>
+            <li> Teams have up to 5 minutes between maps. Extra time may be given if Ziegers Staff feels it’s necessary to extend the 5 minute time limit.</li>
+            <li> The loser's brackets matchmaking will be done on a random basis by the Ziegers Staff.</li>
+            <li> If a team has a technical issue, they are allowed to use the pause function. A pause can last up to 5 minutes per match per team. The team 
+            has to announce the reason before or immediately after they paused the match.</li>
+          </ul>
+        </div>
+        <div className="valorantmapselection w-[950px]">
+          <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center">
+            <div className="font-medium">Map Selection Process for Best-of-One Matches:</div>
+            <ul className="flex flex-col gap-3 items-center text-center" style={{ listStyleType: 'disc' }}>
+              <li> Team A bans 1 Map</li>
+              <li> Team B bans 1 Map</li>
+              <li> Team A bans 1 Map</li>
+              <li> Team B bans 1 Map</li>
+              <li> Team A bans 1 Map</li>
+              <li> Team B bans 1 Map</li>
+              <li> Map 7 is only Map remaining</li>
+              <li> Teams will be picking sides by toss</li>
+            </ul>
+          </div>
+        </div>
+        <div className="valorantnote text-[#D05555] text-center text-[20px] font-inter italic font-medium tracking-[1.15px]">
+        *NOTE: Any sort of damage to the property of Ziegers and the concerned authorities will not 
+        be tolerated and the one's responsible will be sanctioned with penalties and can also be charged 
+        a fine depending on the damage done.
         </div>
       </div>
     </div>

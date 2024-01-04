@@ -5,7 +5,7 @@ import Home from './components/home';
 import Eventpage from './components/Eventpage';
 
 // import ScrollComponent from './components/ScrollComponent';
-import GamingPage from './components/Events/Gamingpage';
+import GamingPage from './components/Events/Gaming';
 import Valorant from './components/Gaming Events/Valorant';
 // import LocomotiveScrollComponent from './components/LocomotiveScrollComponent';
 

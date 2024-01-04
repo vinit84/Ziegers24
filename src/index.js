@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router , Routes , Route} from "react-router-dom";
 import Eventpage from './components/Eventpage';
-import Gamingpage from './components/Events/Gamingpage';
+import Gamingpage from './components/Events/Gaming';
 import Valorant from './components/Gaming Events/Valorant';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
