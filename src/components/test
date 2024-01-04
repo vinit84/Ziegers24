@@ -1,0 +1,4 @@
+onClick={handleGamecardClick}
+ onClick={handleTechnutzcardClick}
+  onClick={handleCodexcardClick}
+   onClick={handleWebdevcardClick}

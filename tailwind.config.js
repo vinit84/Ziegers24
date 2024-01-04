@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         varino: ["Varino"],
         inter: ["Inter"],
+        readex: ["Readex"],
       },
     },
   },

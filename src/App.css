@@ -2,8 +2,15 @@
   font-family: varino;
   src: url(../public/VarinonormalRegular-nRYg4.otf);
 }
+@font-face {
+  font-family: readex;
+  src: url(../public/ReadexPro-VariableFont_HEXP\,wght.ttf);
+}
 .Varino {
   font-family: varino;
+}
+.Readex{
+  font-family: readex;
 }
 * {
   margin: 0;
@@ -14,7 +21,7 @@
   position: relative;
   background-color: #0a0a0b;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   box-shadow: 25px 26px 6.1px 0px rgba(0, 0, 0, 0.65);
 }
 .spotlight {
@@ -36,7 +43,7 @@
   background: linear-gradient(150deg, #265350 12.28%, #000 80%);
 }
 
-.ziegers {
+.ziegers2024 {
   background: linear-gradient(98deg, #4a3afe 0%, #00c2ff 52.4%, #20fa0d 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -77,32 +84,6 @@
   }
 }
 
-@keyframes blobAnimate {
-  0% {
-    top: 50%;
-    left: 50%;
-  }
-  20% {
-    top: 51%;
-    left: 51%;
-  }
-  40% {
-    top: 50%;
-    left: 50%;
-  }
-  60% {
-    top: 51%;
-    left: 50%;
-  }
-  80% {
-    top: 48%;
-    left: 51%;
-  }
-  100% {
-    top: 50%;
-    left: 50%;
-  }
-}
 .bgstyle {
   background-color: black;
   background-image: radial-gradient(
@@ -130,7 +111,6 @@
 
 body {
   background: #000;
-  overflow: hidden;
   background-image: radial-gradient(
       circle at 40% 50%,
       #60b3ff 0%,
@@ -549,6 +529,28 @@ body {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
+
+
+a:hover svg path {
+  fill: #ffffff;
+}
+
+a:hover h1 {
+  color: #ffffff;
+}
+
+.bg-blur {
+  background: linear-gradient(180deg, rgba(2, 2, 6, 0.00) 0%, #020206 50%);
+}
+.valo-btn {
+  transition: filter 0.3s ease;
+}
+
+.valo-btn:hover {
+  filter: drop-shadow(0px 4px 20px #BBFF1A);
+  
+}
+
 .tilt {
   transition: opacity 0.5s ease;
   opacity: 0;
@@ -604,3 +606,191 @@ body {
   width: 33rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+@media only screen and (max-width: 600px){
+  .bgstyle{
+    background-color: black;
+    background-image: radial-gradient(circle, #FFF 0%, #FFF 15%, #38E7FF 30%, #60B3FF 45%, #1d3f55 69%, #0e171d 77%, #000 85%);
+    height: 100vh;
+    width: 100vw;
+    max-height: 100vh;
+    backdrop-filter: blur(50px);
+  }
+  .strokes{
+    width: 93%;
+    height: 47%;
+    position: absolute;
+    top: 0;
+    margin-top: 10rem;
+  }
+  .hero-section{
+    position: absolute;
+    top: 13.5%;
+  }
+  .ziegers2024{
+    font-size: 40px;
+    padding-top: 20px;
+  }
+  .ziegers-text{
+    font-size: 18px;
+  }
+  .register-button{
+    margin-top: 35px;
+  }
+  .topleft{
+    height: 40px;
+    width: 40px;
+    left: 60px;
+    top: 36.7rem;
+    transform: rotate(-35deg);
+  }
+  .middleleft{
+    height: 17px;
+    width: 17px;
+    left: 10px;
+    bottom: 12rem;
+    transform: rotate(-5deg);
+  }
+  .bottomleft{
+    height: 80px;
+    width: 80px;
+    bottom: 4.6rem;
+    left: 60px;
+    transform: rotate(-35deg);
+  }
+  .topright{
+    height: 80px;
+    width: 80px;
+    top: 35.7rem;
+    right: 35px;
+    transform: rotate(-100deg);
+  }
+  .bottomright{
+    height: 40px;
+    width: 40px;
+    right: 60px;
+    bottom: 4.6rem;
+    transform: rotate(20deg);
+  }
+  .middleright{
+    height: 17px;
+    width: 17px;
+    right: 10px;
+    bottom: 8.4rem;
+    transform: rotate(-100deg);
+  }
+  .stars{
+    height: 17.6rem;
+    width: 26rem;
+    left:1rem;
+    top: 36rem;
+    backdrop-filter: blur(5px);
+  }
+
+  .nav-text{
+    font-size: 14px;
+    display: none;
+  }
+  .logo-text{
+    font-size: 14px;
+    margin-left: 5rem;
+  }
+  .m-insta{
+    font-size: 10px;
+  }
+  .m-card1{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    padding-top: 3.5rem;
+    gap: 0.5rem;
+  }
+  .m-card2{
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-top: -1.3rem;
+    margin-right: 2rem;
+    gap:0.5rem;
+  }
+}
+
+.gaming{
+  background: linear-gradient(180deg, #FFF 0%, rgba(181, 181, 181, 0.00) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-blend-mode: normal, normal, luminosity;
+}
+
+.bgmigamingcard{
+  background: linear-gradient(180deg, #B5B5B5 0%, rgba(181, 181, 181, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.9s ease-in-out;
+}
+.codmgamingcard{
+  background: linear-gradient(180deg, rgba(214, 1, 76, 0.80) 0%, rgba(214, 1, 76, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.9s ease-in-out;
+}
+.bgmioverlay{
+  border-radius: 76px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
+  background-blend-mode: normal, normal, luminosity;
+  z-index: 1;
+  opacity: 1; 
+  transition: all 0.9s ease;
+}
+.bgmi:hover .bgmioverlay{
+  opacity: 0;
+}
+.bgmigamingcard:hover{
+  box-shadow: 0px 4px 70px 0px rgba(181, 181, 181, 0.50);
+  background-color: #B5B5B5;
+}
+.codm:hover .bgmioverlay{
+  opacity: 0;
+}
+.codmgamingcard:hover{
+  box-shadow: 0px 4px 70px 0px #D6014C;
+  background-color: rgba(214, 1, 76, 0.80);
+}
+.valorantgamingcard{
+  background: rgba(207, 251, 37, 0.80);
+  box-shadow: 0px 4px 4px 0px #CFFB25;
+  transition: all 0.9s ease-in-out;
+}
+.valorantgamingcard:hover{
+  background: #EAEAEA;
+  box-shadow: 0px 4px 100px 0px rgba(207, 251, 37, 0.50);
+}
+.fifagamingcard{
+  background: linear-gradient(180deg, rgba(96, 245, 255, 0.80) 0%, rgba(181, 181, 181, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.9s ease-in-out;
+}
+.assetocorsagamingcard{
+  background: linear-gradient(180deg, rgba(214, 0, 0, 0.80) 0%, rgba(214, 0, 0, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.9s ease-in-out;
+}
+.fifa:hover .bgmioverlay{
+  opacity: 0;
+}
+.fifagamingcard:hover{
+  background: rgba(96, 245, 255, 0.80);
+  box-shadow: 0px 4px 100px 0px rgba(70, 191, 230, 0.50);
+}
+.assetocorsa:hover .bgmioverlay{
+  opacity: 0;
+}
+.assetocorsagamingcard:hover{
+  background: rgba(214, 0, 0, 0.80);
+  box-shadow: 0px 4px 100px 0px #D60000;
+}
+

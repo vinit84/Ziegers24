@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router , Routes , Route} from "react-router-dom";
 import Eventpage from './components/Eventpage';
+import Gamingpage from './components/Events/Gamingpage';
+import Valorant from './components/Gaming Events/Valorant';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +14,12 @@ root.render(
     <Router>
       <Routes>
         <Route path="/*" element = {<App/>}/>
-        <Route path="/eventspage" element={<Eventpage/>}/>
+        <Route path="/events" element={<Eventpage/>}/>
+        <Route path="/events/gaming" element={<Gamingpage/>} />
+        <Route path="/events/gaming/valorant" element={<Valorant/>} />
+        {/* <Route path="/events/technutz" element={<GamingPage/>} />
+      <Route path="/events/codex" element={<GamingPage/>} />
+      <Route path="/events/webdev" element={<GamingPage/>} /> */}
       </Routes>
     </Router>
     

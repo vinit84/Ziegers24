@@ -4,25 +4,23 @@ import stroke from "../../src/assets/strokes.png";
 import sphere1 from "../../src/assets/planet.png";
 import sphere2 from "../../src/assets/planet2.svg";
 import sphere3 from "../../src/assets/planet3.svg";
-// import globe from "../../src/assets/globe.svg";
 import { useNavigate } from "react-router-dom";
 import transition from "../transition";
-import { ButtonIcon } from "@radix-ui/react-icons";
 
 function Home() {
   const navigate = useNavigate();
 
   const handleRegisterClick = () => {
-    navigate("/eventspage");
+    navigate("/events");
   };
 
   return (
-    <div className="wrapper relative overflow-x-hidden font-varino">
+    <div className="wrapper relative overflow-hidden font-varino">
       <div className="bgstyle"></div>
       <img
         src={stars}
         alt="stars"
-        className="absolute h-[40rem] w-[90rem] top-[8rem] left-[7rem]"
+        className="absolute h-[40rem] w-[90rem] top-[8rem] left-[7rem] stars"
       ></img>
       <nav className="flex justify-center align-center">
         <div className="w-screen max-w-[1400px] mx-auto flex items-center justify-between absolute top-1 z-10">
@@ -92,7 +90,7 @@ function Home() {
           </div>
           <div className="flex items-center">
             <a
-              href=""
+              href="h"
               className="w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[3rem] bg-gradient-to-r from-zinc-950 to-blue-900 rounded-full shadow border border-blue-900 justify-start items-center inline-flex instagram-button"
             >
               <div className="w-4 h-4 relative flex-col justify-start items-start flex " />
@@ -128,25 +126,25 @@ function Home() {
         <img
           src={stroke}
           alt="Strokes"
-          className="w-[45%] h-[75%] absolute top-0 mt-20"
+          className="w-[45%] h-[75%] absolute top-0 mt-20 strokes"
         ></img>
-        <div className="flex flex-col gap-3 absolute z-10 items-center top-[17%] h-[420px] w-[650px] mx-auto overflow-hidden">
+        <div className="flex flex-col gap-3 absolute z-10 items-center top-[17%] h-[440px] w-[650px] mx-auto overflow-hidden hero-section">
           <img
             src={logo}
             alt="Hello"
             className="h-[143px] w-[150px] translate-y-5"
           ></img>
-          <p className="text-black ziegers font-semibold text-[50px] leading-[65px] font-varino max-w-[850px] text-center mt-[10px]">
+          <p className="text-black ziegers font-semibold text-[50px] leading-[65px] font-varino max-w-[850px] text-center mt-[10px] ziegers2024">
             ZIEGERS 2024
           </p>
-          <p className="mt-3 text-center text-[#080808] font-inter text-[20px] leading-[25px]">
+          <p className="mt-3 text-center text-[#080808] font-inter text-[20px] leading-[25px] ziegers-text ">
             Ziegers enables participants to discover <br /> connections that was
             not possible before.
           </p>
         
           <div
             onClick={handleRegisterClick}
-            className="flex fuller-button justify-center items-center mt-4 rounded-[100px] text-[#F9F9FF] font-varino bg-[#09090A] shadow-[0_1.417px_2.834px_0_rgba(0, 0, 0, 0.05)] p-[20px_10px_20px_15px] inline-flex items-center justify-center gap-1 h-[3.5rem] cursor-pointer"
+            className="flex fuller-button justify-center items-center mt-4 rounded-[100px] text-[#F9F9FF] font-varino bg-[#09090A] shadow-[0_1.417px_2.834px_0_rgba(0, 0, 0, 0.05)] p-[20px_10px_20px_15px] inline-flex items-center justify-center gap-1 h-[3.5rem] cursor-pointer register-button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -175,32 +173,32 @@ function Home() {
       <img
         src={sphere1}
         alt="bottomleft"
-        className="blur-[1.3px] bottom-[30px] left-[160px] absolute h-[170px] w-[170px] "
+        className="bottomleft blur-[1.3px] bottom-[30px] left-[160px] absolute h-[170px] w-[170px] "
       ></img>
       <img
         src={sphere1}
         alt="middleleft"
-        className="blur-[2px] rotate-[19deg] top-72 left-4 absolute h-[40px] w-[40px] "
+        className="middleleft blur-[2px] rotate-[19deg] bottom-[26rem] left-4 absolute h-[40px] w-[40px] "
       ></img>
       <img
         src={sphere2}
         alt="topleft"
-        className="blur-[2px] top-28 left-[190px] absolute h-[80px] w-[80px] "
+        className="topleft blur-[2px] top-28 left-[190px] absolute h-[80px] w-[80px] "
       ></img>
       <img
         src={sphere3}
         alt="bottomright"
-        className="blur-[2px] bottom-20 right-40 absolute h-[80px] w-[80px]  "
+        className="bottomright blur-[2px] bottom-20 right-40 absolute h-[80px] w-[80px]  "
       ></img>
       <img
         src={sphere1}
         alt="middleright"
-        className="blur-[1.3px] bottom-60 rotate-[-150deg] right-6 absolute h-[40px] w-[40px] "
+        className="middleright blur-[1.3px] bottom-60 rotate-[-150deg] right-6 absolute h-[40px] w-[40px] "
       ></img>
       <img
         src={sphere1}
         alt="topright"
-        className="blur-[1.3px] -rotate-[165deg] top-28 right-24 absolute h-[170px] w-[170px] "
+        className="topright blur-[1.3px] -rotate-[165deg] top-28 right-24 absolute h-[170px] w-[170px] "
       ></img>
     </div>
   );
