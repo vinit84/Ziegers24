@@ -529,6 +529,28 @@ body {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
+
+
+a:hover svg path {
+  fill: #ffffff;
+}
+
+a:hover h1 {
+  color: #ffffff;
+}
+
+.bg-blur {
+  background: linear-gradient(180deg, rgba(2, 2, 6, 0.00) 0%, #020206 50%);
+}
+.valo-btn {
+  transition: filter 0.3s ease;
+}
+
+.valo-btn:hover {
+  filter: drop-shadow(0px 4px 20px #BBFF1A);
+  
+}
+
 .tilt {
   transition: opacity 0.5s ease;
   opacity: 0;
@@ -703,9 +725,72 @@ body {
 
 .bgmigamingcard{
   background: linear-gradient(180deg, #B5B5B5 0%, rgba(181, 181, 181, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.9s ease-in-out;
 }
 .codmgamingcard{
   background: linear-gradient(180deg, rgba(214, 1, 76, 0.80) 0%, rgba(214, 1, 76, 0.00) 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.9s ease-in-out;
+}
+.bgmioverlay{
+  border-radius: 76px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
+  background-blend-mode: normal, normal, luminosity;
+  z-index: 1;
+  opacity: 1; 
+  transition: all 0.9s ease;
+}
+.bgmi:hover .bgmioverlay{
+  opacity: 0;
+}
+.bgmigamingcard:hover{
+  box-shadow: 0px 4px 70px 0px rgba(181, 181, 181, 0.50);
+  background-color: #B5B5B5;
+}
+.codm:hover .bgmioverlay{
+  opacity: 0;
+}
+.codmgamingcard:hover{
+  box-shadow: 0px 4px 70px 0px #D6014C;
+  background-color: rgba(214, 1, 76, 0.80);
+}
+.valorantgamingcard{
+  background: rgba(207, 251, 37, 0.80);
+  box-shadow: 0px 4px 4px 0px #CFFB25;
+  transition: all 0.9s ease-in-out;
+}
+.valorantgamingcard:hover{
+  background: #EAEAEA;
+  box-shadow: 0px 4px 100px 0px rgba(207, 251, 37, 0.50);
+}
+.fifagamingcard{
+  background: linear-gradient(180deg, rgba(96, 245, 255, 0.80) 0%, rgba(181, 181, 181, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.9s ease-in-out;
+}
+.assetocorsagamingcard{
+  background: linear-gradient(180deg, rgba(214, 0, 0, 0.80) 0%, rgba(214, 0, 0, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.9s ease-in-out;
+}
+.fifa:hover .bgmioverlay{
+  opacity: 0;
+}
+.fifagamingcard:hover{
+  background: rgba(96, 245, 255, 0.80);
+  box-shadow: 0px 4px 100px 0px rgba(70, 191, 230, 0.50);
+}
+.assetocorsa:hover .bgmioverlay{
+  opacity: 0;
+}
+.assetocorsagamingcard:hover{
+  background: rgba(214, 0, 0, 0.80);
+  box-shadow: 0px 4px 100px 0px #D60000;
 }
 
