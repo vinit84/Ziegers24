@@ -11,7 +11,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleRegisterClick = () => {
-    navigate("/eventspage");
+    navigate("/events");
   };
 
   return (

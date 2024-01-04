@@ -20,7 +20,7 @@ const Eventpage = () => {
   const navigate = useNavigate();
 
   const handleGamecardClick = () => {
-    navigate("/gamingpage");
+    navigate("/events/gaming");
   };
 
   useEffect(() => {
