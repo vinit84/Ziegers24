@@ -5,8 +5,9 @@ import Home from './components/home';
 import Eventpage from './components/Eventpage';
 
 // import ScrollComponent from './components/ScrollComponent';
-import GamingPage from './components/Events/Gamingpage';
+import GamingPage from './components/Events/Gaming';
 import Valorant from './components/Gaming Events/Valorant';
+import ScrollToTop from './components/ScrollToTop';
 // import LocomotiveScrollComponent from './components/LocomotiveScrollComponent';
 
 
@@ -19,6 +20,7 @@ function App() {
     <>
      {/* <ScrollComponent/>
      <LocomotiveScrollComponent/> */}
+     <ScrollToTop />
     <AnimatePresence mode='wait'>
     <Routes location={location} key={location.pathname}>
       <Route path="/*" element={<Home/>}/>

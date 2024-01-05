@@ -19,10 +19,9 @@
 }
 .wrapper {
   position: relative;
-  background-color: #0a0a0b;
+  background-color: #0A0A0B;
   min-height: 100vh;
   overflow-x: hidden;
-  box-shadow: 25px 26px 6.1px 0px rgba(0, 0, 0, 0.65);
 }
 .spotlight {
   filter: blur(50px);
@@ -111,14 +110,14 @@
 
 body {
   background: #000;
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
       circle at 40% 50%,
       #60b3ff 0%,
       #a30d8a00 40%
     ),
     radial-gradient(circle at 65% 60%, #1d3f55 0%, #580e7500 45%),
     radial-gradient(circle at 40% 60%, #076066 0%, #17777700 45%);
-  background-blend-mode: screen;
+  background-blend-mode: screen; */
 }
 
 .scene {
@@ -726,14 +725,14 @@ a:hover h1 {
 .bgmigamingcard{
   background: linear-gradient(180deg, #B5B5B5 0%, rgba(181, 181, 181, 0.00) 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition: all 0.9s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 .codmgamingcard{
-  background: linear-gradient(180deg, rgba(214, 1, 76, 0.80) 0%, rgba(214, 1, 76, 0.00) 100%);
+  background: linear-gradient(180deg, rgba(214, 1, 76, 0.80) 0%, rgba(181, 181, 181, 0.00) 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition: all 0.9s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
-.bgmioverlay{
+.overlay{
   border-radius: 76px;
   position: absolute;
   top: 0;
@@ -744,16 +743,16 @@ a:hover h1 {
   background-blend-mode: normal, normal, luminosity;
   z-index: 1;
   opacity: 1; 
-  transition: all 0.9s ease;
+  transition: all 0.6s ease;
 }
-.bgmi:hover .bgmioverlay{
+.bgmi:hover .overlay{
   opacity: 0;
 }
 .bgmigamingcard:hover{
   box-shadow: 0px 4px 70px 0px rgba(181, 181, 181, 0.50);
   background-color: #B5B5B5;
 }
-.codm:hover .bgmioverlay{
+.codm:hover .overlay{
   opacity: 0;
 }
 .codmgamingcard:hover{
@@ -763,34 +762,96 @@ a:hover h1 {
 .valorantgamingcard{
   background: rgba(207, 251, 37, 0.80);
   box-shadow: 0px 4px 4px 0px #CFFB25;
-  transition: all 0.9s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 .valorantgamingcard:hover{
   background: #EAEAEA;
-  box-shadow: 0px 4px 100px 0px rgba(207, 251, 37, 0.50);
+  box-shadow: 0px 4px 70px 0px rgba(207, 251, 37, 0.50);
 }
 .fifagamingcard{
   background: linear-gradient(180deg, rgba(96, 245, 255, 0.80) 0%, rgba(181, 181, 181, 0.00) 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition: all 0.9s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 .assetocorsagamingcard{
   background: linear-gradient(180deg, rgba(214, 0, 0, 0.80) 0%, rgba(214, 0, 0, 0.00) 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition: all 0.9s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
-.fifa:hover .bgmioverlay{
+.fifa:hover .overlay{
   opacity: 0;
 }
 .fifagamingcard:hover{
-  background: rgba(96, 245, 255, 0.80);
-  box-shadow: 0px 4px 100px 0px rgba(70, 191, 230, 0.50);
+  background-color: rgba(96, 245, 255, 0.80);
+  box-shadow: 0px 4px 70px 0px rgba(70, 191, 230, 0.50);
 }
-.assetocorsa:hover .bgmioverlay{
+.assetocorsa:hover .overlay{
   opacity: 0;
 }
 .assetocorsagamingcard:hover{
-  background: rgba(214, 0, 0, 0.80);
-  box-shadow: 0px 4px 100px 0px #D60000;
+  background-color: rgba(214, 0, 0, 0.80);
+  box-shadow: 0px 4px 70px 0px #D60000;
 }
-
+.bgmigamingcard:hover .bgmitext{
+  background: linear-gradient(180deg, #EF940C 0%, #B5B5B5 91.13%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.codmgamingcard:hover .codmtext{
+  background: linear-gradient(180deg, #D6014C 0%, #B5B5B5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.valoranttext{
+  background: linear-gradient(180deg, rgba(207, 251, 37, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.valorantgamingcard:hover .valoranttext{
+  background: linear-gradient(180deg, #F3F3F3 0%, #000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 20;
+}
+.valoranttext:hover .valorantgamingcard{
+  background: #EAEAEA;
+  box-shadow: 0px 4px 70px 0px rgba(207, 251, 37, 0.50);
+}
+.valorantgamingcard:hover .valorantimg{
+  filter: grayscale(0);
+}
+.fifagamingcard:hover .fifatext{
+  background: linear-gradient(180deg, #46BFE6 0%, #D92E6A 243.59%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.assetocorsagamingcard:hover .assetotext{
+  background: linear-gradient(180deg, #F2F2F2 0%, #B5B5B5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.valorantbanneroverlay{
+  background: linear-gradient(180deg, rgba(2, 2, 6, 0.00) 0%, #0A0A0B 50%);
+}
+.valorantrules{
+  background: var(--text-gradient, linear-gradient(180deg, #F2F2F2 0%, #B5B5B5 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.rulescard{
+  border-radius: 20px;
+  border: 1px solid var(--card-gradient-border, #494949);
+  background: var(--card-gradient, linear-gradient(130deg, #191918 8.33%, rgba(107, 110, 94, 0.00) 96.92%));
+}
+.valorantmapselection{
+  border-radius: 20px;
+  border: 1px solid var(--card-gradient-border, #494949);
+  background: var(--card-gradient, linear-gradient(130deg, #191918 8.33%, rgba(107, 110, 94, 0.00) 96.92%));
+}

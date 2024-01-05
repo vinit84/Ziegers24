@@ -1,5 +1,5 @@
 import React from "react";
-import transition from "../transition";
+// import transition from "../transition";
 import Navbar from "./navbar.jsx";
 import WebdevCard from "../assets/WebdevCard.png";
 import gamecard from "../assets/gamecard.png";
@@ -152,4 +152,4 @@ const Eventpage = () => {
   );
 };
 
-export default transition(Eventpage);
+export default Eventpage;
