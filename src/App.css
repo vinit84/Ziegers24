@@ -4,12 +4,12 @@
 }
 @font-face {
   font-family: readex;
-  src: url(../public/ReadexPro-VariableFont_HEXP\,wght.ttf);
+  src: url(../public/ReadexPro-VariableFont_HEXP\wght.ttf);
 }
 .Varino {
   font-family: varino;
 }
-.Readex{
+.Readex {
   font-family: readex;
 }
 * {
@@ -19,7 +19,7 @@
 }
 .wrapper {
   position: relative;
-  background-color: #0A0A0B;
+  background-color: #0a0a0b;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -528,8 +528,6 @@ body {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-
-
 a:hover svg path {
   fill: #ffffff;
 }
@@ -539,15 +537,59 @@ a:hover h1 {
 }
 
 .bg-blur {
-  background: linear-gradient(180deg, rgba(2, 2, 6, 0.00) 0%, #020206 50%);
+  background: linear-gradient(180deg, rgba(2, 2, 6, 0) 0%, #020206 50%);
 }
 .valo-btn {
   transition: filter 0.3s ease;
 }
 
 .valo-btn:hover {
-  filter: drop-shadow(0px 4px 20px #BBFF1A);
-  
+  filter: drop-shadow(0px 4px 20px #bbff1a);
+}
+.cod-btn {
+  transition: filter 0.3s ease;
+}
+
+.cod-btn:hover {
+  filter: drop-shadow(0px 4px 20px #d6014c);
+}
+.gt7-btn {
+  transition: filter 0.3s ease;
+}
+
+.gt7-btn:hover {
+  filter: drop-shadow(0px 4px 20px #d60000);
+}
+.bgmi-btn {
+  transition: filter 0.3s ease;
+}
+
+.bgmi-btn:hover {
+  filter: drop-shadow(0px 4px 20px #d4c8bd);
+}
+.fifa-btn {
+  transition: filter 0.3s ease;
+}
+
+.fifa-btn:hover {
+  filter: drop-shadow(0px 4px 20px #0080d8);
+}
+
+.codex-btn {
+  transition: filter 0.3s ease;
+}
+.codex-btn:hover {
+  filter: drop-shadow(0px 4px 20px #6c0fe4);
+}
+.technutz-btn {
+  transition: filter 0.3s ease;
+}
+.technutz-btn:hover {
+  filter: drop-shadow(0px 4px 20px #fa00ff);
+}
+
+.codexrounds {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .tilt {
@@ -561,143 +603,152 @@ a:hover h1 {
 
 /* Event Cards */
 
-.card1{
+.card1 {
   border-radius: 50px;
   width: 33rem;
 }
 
-.card1:hover{
-  box-shadow: 0px 4px 70px 0px #C701E8;
+.card1:hover {
+  box-shadow: 0px 4px 70px 0px #c701e8;
   border-radius: 52px;
   width: 33rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.card2{
+.card2 {
   border-radius: 50px;
   width: 33rem;
 }
 
-.card2:hover{
-  box-shadow: 0px 4px 70px 0px #0134E8;
+.card2:hover {
+  box-shadow: 0px 4px 70px 0px #0134e8;
   border-radius: 52px;
   width: 33rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.card3{
+.card3 {
   border-radius: 50px;
   width: 33rem;
 }
 
-.card3:hover{
-  box-shadow: 0px 4px 70px 0px rgba(66, 216, 29, 0.50);
+.card3:hover {
+  box-shadow: 0px 4px 70px 0px #f09;
   border-radius: 52px;
   width: 33rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.card4{
+.card4 {
   border-radius: 50px;
   width: 33rem;
 }
 
-.card4:hover{
-  box-shadow: 0px 4px 70px 0px rgba(41, 203, 203, 0.50);
+.card4:hover {
+  box-shadow: 0px 4px 70px 0px rgba(41, 203, 203, 0.5);
   border-radius: 52px;
   width: 33rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-@media only screen and (max-width: 600px){
-  .bgstyle{
+@media only screen and (max-width: 600px) {
+  .bgstyle {
     background-color: black;
-    background-image: radial-gradient(circle, #FFF 0%, #FFF 15%, #38E7FF 30%, #60B3FF 45%, #1d3f55 69%, #0e171d 77%, #000 85%);
+    background-image: radial-gradient(
+      circle,
+      #fff 0%,
+      #fff 15%,
+      #38e7ff 30%,
+      #60b3ff 45%,
+      #1d3f55 69%,
+      #0e171d 77%,
+      #000 85%
+    );
     height: 100vh;
     width: 100vw;
     max-height: 100vh;
     backdrop-filter: blur(50px);
   }
-  .strokes{
+  .strokes {
     width: 93%;
     height: 47%;
     position: absolute;
     top: 0;
     margin-top: 10rem;
   }
-  .hero-section{
+  .hero-section {
     position: absolute;
     top: 13.5%;
   }
-  .ziegers2024{
+  .ziegers2024 {
     font-size: 40px;
     padding-top: 20px;
   }
-  .ziegers-text{
+  .ziegers-text {
     font-size: 18px;
   }
-  .register-button{
+  .register-button {
     margin-top: 35px;
   }
-  .topleft{
+  .topleft {
     height: 40px;
     width: 40px;
     left: 60px;
     top: 36.7rem;
     transform: rotate(-35deg);
   }
-  .middleleft{
+  .middleleft {
     height: 17px;
     width: 17px;
     left: 10px;
     bottom: 12rem;
     transform: rotate(-5deg);
   }
-  .bottomleft{
+  .bottomleft {
     height: 80px;
     width: 80px;
     bottom: 4.6rem;
     left: 60px;
     transform: rotate(-35deg);
   }
-  .topright{
+  .topright {
     height: 80px;
     width: 80px;
     top: 35.7rem;
     right: 35px;
     transform: rotate(-100deg);
   }
-  .bottomright{
+  .bottomright {
     height: 40px;
     width: 40px;
     right: 60px;
     bottom: 4.6rem;
     transform: rotate(20deg);
   }
-  .middleright{
+  .middleright {
     height: 17px;
     width: 17px;
     right: 10px;
     bottom: 8.4rem;
     transform: rotate(-100deg);
   }
-  .stars{
+  .stars {
     height: 17.6rem;
     width: 26rem;
-    left:1rem;
+    left: 1rem;
     top: 36rem;
     backdrop-filter: blur(5px);
   }
 
-  .nav-text{
+  .nav-text {
     font-size: 14px;
     display: none;
   }
-  .logo-text{
+  .logo-text {
     font-size: 14px;
     margin-left: 5rem;
   }
-  .m-insta{
+  .m-insta {
     font-size: 10px;
   }
-  .m-card1{
+  .m-card1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -705,153 +756,218 @@ a:hover h1 {
     padding-top: 3.5rem;
     gap: 0.5rem;
   }
-  .m-card2{
+  .m-card2 {
     flex-direction: column;
     margin-left: 2rem;
     margin-top: -1.3rem;
     margin-right: 2rem;
-    gap:0.5rem;
+    gap: 0.5rem;
   }
 }
 
-.gaming{
-  background: linear-gradient(180deg, #FFF 0%, rgba(181, 181, 181, 0.00) 100%);
+.gaming {
+  background: linear-gradient(180deg, #fff 0%, rgba(181, 181, 181, 0) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-blend-mode: normal, normal, luminosity;
 }
 
-.bgmigamingcard{
-  background: linear-gradient(180deg, #B5B5B5 0%, rgba(181, 181, 181, 0.00) 100%);
+.bgmigamingcard {
+  background: linear-gradient(180deg, #b5b5b5 0%, rgba(181, 181, 181, 0) 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.6s ease-in-out;
 }
-.codmgamingcard{
-  background: linear-gradient(180deg, rgba(214, 1, 76, 0.80) 0%, rgba(181, 181, 181, 0.00) 100%);
+.codmgamingcard {
+  background: linear-gradient(
+    180deg,
+    rgba(214, 1, 76, 0.8) 0%,
+    rgba(181, 181, 181, 0) 100%
+  );
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.6s ease-in-out;
 }
-.overlay{
+.overlay {
   border-radius: 76px;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-blend-mode: normal, normal, luminosity;
   z-index: 1;
-  opacity: 1; 
+  opacity: 1;
   transition: all 0.6s ease;
 }
-.bgmi:hover .overlay{
+.bgmi:hover .overlay {
   opacity: 0;
 }
-.bgmigamingcard:hover{
-  box-shadow: 0px 4px 70px 0px rgba(181, 181, 181, 0.50);
-  background-color: #B5B5B5;
+.bgmigamingcard:hover {
+  box-shadow: 0px 4px 70px 0px rgba(181, 181, 181, 0.5);
+  background-color: #b5b5b5;
 }
-.codm:hover .overlay{
+.codm:hover .overlay {
   opacity: 0;
 }
-.codmgamingcard:hover{
-  box-shadow: 0px 4px 70px 0px #D6014C;
-  background-color: rgba(214, 1, 76, 0.80);
+.codmgamingcard:hover {
+  box-shadow: 0px 4px 70px 0px #d6014c;
+  background-color: rgba(214, 1, 76, 0.8);
 }
-.valorantgamingcard{
-  background: rgba(207, 251, 37, 0.80);
-  box-shadow: 0px 4px 4px 0px #CFFB25;
+.valorantgamingcard {
+  background: rgba(207, 251, 37, 0.8);
+  box-shadow: 0px 4px 4px 0px #cffb25;
   transition: all 0.6s ease-in-out;
 }
-.valorantgamingcard:hover{
-  background: #EAEAEA;
-  box-shadow: 0px 4px 70px 0px rgba(207, 251, 37, 0.50);
+.valorantgamingcard:hover {
+  background: #eaeaea;
+  box-shadow: 0px 4px 70px 0px rgba(207, 251, 37, 0.5);
 }
-.fifagamingcard{
-  background: linear-gradient(180deg, rgba(96, 245, 255, 0.80) 0%, rgba(181, 181, 181, 0.00) 100%);
+.fifagamingcard {
+  background: linear-gradient(
+    180deg,
+    rgba(96, 245, 255, 0.8) 0%,
+    rgba(181, 181, 181, 0) 100%
+  );
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.6s ease-in-out;
 }
-.assetocorsagamingcard{
-  background: linear-gradient(180deg, rgba(214, 0, 0, 0.80) 0%, rgba(214, 0, 0, 0.00) 100%);
+.assetocorsagamingcard {
+  background: linear-gradient(
+    180deg,
+    rgba(214, 0, 0, 0.8) 0%,
+    rgba(214, 0, 0, 0) 100%
+  );
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.6s ease-in-out;
 }
-.fifa:hover .overlay{
+.fifa:hover .overlay {
   opacity: 0;
 }
-.fifagamingcard:hover{
-  background-color: rgba(96, 245, 255, 0.80);
-  box-shadow: 0px 4px 70px 0px rgba(70, 191, 230, 0.50);
+.fifagamingcard:hover {
+  background-color: rgba(96, 245, 255, 0.8);
+  box-shadow: 0px 4px 70px 0px rgba(70, 191, 230, 0.5);
 }
-.assetocorsa:hover .overlay{
+.assetocorsa:hover .overlay {
   opacity: 0;
 }
-.assetocorsagamingcard:hover{
-  background-color: rgba(214, 0, 0, 0.80);
-  box-shadow: 0px 4px 70px 0px #D60000;
+.assetocorsagamingcard:hover {
+  background-color: rgba(214, 0, 0, 0.8);
+  box-shadow: 0px 4px 70px 0px #d60000;
 }
-.bgmigamingcard:hover .bgmitext{
-  background: linear-gradient(180deg, #EF940C 0%, #B5B5B5 91.13%);
+.bgmigamingcard:hover .bgmitext {
+  background: linear-gradient(180deg, #ef940c 0%, #b5b5b5 91.13%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.codmgamingcard:hover .codmtext{
-  background: linear-gradient(180deg, #D6014C 0%, #B5B5B5 100%);
+.codmgamingcard:hover .codmtext {
+  background: linear-gradient(180deg, #d6014c 0%, #b5b5b5 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.valoranttext{
-  background: linear-gradient(180deg, rgba(207, 251, 37, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%);
+.valoranttext {
+  background: linear-gradient(
+    180deg,
+    rgba(207, 251, 37, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.valorantgamingcard:hover .valoranttext{
-  background: linear-gradient(180deg, #F3F3F3 0%, #000 100%);
+.valorantgamingcard:hover .valoranttext {
+  background: linear-gradient(180deg, #f3f3f3 0%, #000 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   z-index: 20;
 }
-.valoranttext:hover .valorantgamingcard{
-  background: #EAEAEA;
-  box-shadow: 0px 4px 70px 0px rgba(207, 251, 37, 0.50);
+.valoranttext:hover .valorantgamingcard {
+  background: #eaeaea;
+  box-shadow: 0px 4px 70px 0px rgba(207, 251, 37, 0.5);
 }
-.valorantgamingcard:hover .valorantimg{
+.valorantgamingcard:hover .valorantimg {
   filter: grayscale(0);
 }
-.fifagamingcard:hover .fifatext{
-  background: linear-gradient(180deg, #46BFE6 0%, #D92E6A 243.59%);
+.fifagamingcard:hover .fifatext {
+  background: linear-gradient(180deg, #46bfe6 0%, #d92e6a 243.59%);
+  background-clip: text;
+  opacity: 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.assetocorsagamingcard:hover .assetotext {
+  background: linear-gradient(180deg, #f2f2f2 0%, #b5b5b5 100%);
+  background-clip: text;
+  opacity: 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.valorantbanneroverlay {
+  background: linear-gradient(180deg, rgba(2, 2, 6, 0) 0%, #0a0a0b 50%);
+}
+.valorantrules {
+  background: var(
+    --text-gradient,
+    linear-gradient(180deg, #f2f2f2 0%, #b5b5b5 100%)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.assetocorsagamingcard:hover .assetotext{
-  background: linear-gradient(180deg, #F2F2F2 0%, #B5B5B5 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.valorantbanneroverlay{
-  background: linear-gradient(180deg, rgba(2, 2, 6, 0.00) 0%, #0A0A0B 50%);
-}
-.valorantrules{
-  background: var(--text-gradient, linear-gradient(180deg, #F2F2F2 0%, #B5B5B5 100%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.rulescard{
+.rulescard {
   border-radius: 20px;
   border: 1px solid var(--card-gradient-border, #494949);
-  background: var(--card-gradient, linear-gradient(130deg, #191918 8.33%, rgba(107, 110, 94, 0.00) 96.92%));
+  background: var(
+    --card-gradient,
+    linear-gradient(130deg, #191918 8.33%, rgba(107, 110, 94, 0) 96.92%)
+  );
 }
-.valorantmapselection{
+.valorantmapselection {
   border-radius: 20px;
   border: 1px solid var(--card-gradient-border, #494949);
-  background: var(--card-gradient, linear-gradient(130deg, #191918 8.33%, rgba(107, 110, 94, 0.00) 96.92%));
+  background: var(
+    --card-gradient,
+    linear-gradient(130deg, #191918 8.33%, rgba(107, 110, 94, 0) 96.92%)
+  );
 }
+
+.webdevvenuecard {
+  border: 1px solid #323232;
+  background: linear-gradient(91deg, #141414 10.32%, #141414 97.92%);
+}
+
+/* web dev start */
+.webdev-btn {
+  transition: filter 0.3s ease;
+}
+
+.webdev-btn:hover {
+  filter: drop-shadow(0px 4px 20px #246db6);
+}
+.webdevvenuecard {
+  border: 1px solid #323232;
+  background: linear-gradient(91deg, #141414 10.32%, #141414 97.92%);
+}
+.webdevhighlights {
+  background: linear-gradient(180deg, #fff 28.57%, rgba(0, 0, 0, 0) 118.57%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.webdevhighlighcards {
+  border: 2px solid var(--stroke, #313131);
+  background: var(
+    --blue,
+    radial-gradient(
+      138.75% 125.82% at 53.72% 51.32%,
+      rgba(27, 82, 224, 0.3) 0%,
+      rgba(10, 10, 10, 0) 100%
+    )
+  );
+}
+
+/* web dev end */

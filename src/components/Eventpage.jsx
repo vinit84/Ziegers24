@@ -7,7 +7,7 @@ import technutzcard from "../assets/technutzcard.png";
 import codexcard from "../assets/codexcard.png";
 import VanillaTilt from "vanilla-tilt";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react"; 
+import { useEffect, useRef, useState } from "react";
 
 const Eventpage = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -21,6 +21,15 @@ const Eventpage = () => {
 
   const handleGamecardClick = () => {
     navigate("/events/gaming");
+  };
+  const handleWebdevcardClick = () => {
+    navigate("/events/webdev");
+  };
+  const handleCodexcardClick = () => {
+    navigate("/events/codex");
+  };
+  const handleTechnutzcardClick = () => {
+    navigate("/events/technutz");
   };
 
   useEffect(() => {
@@ -83,60 +92,61 @@ const Eventpage = () => {
     }, 3000);
   }, []);
 
-  
-
   return (
     <div>
       {showNavbar && <Navbar />}
 
-      {/* <div className="flex flex-col mx-auto absolute z-10 ml-[5rem]">
-        <div className="flex flex-row mx-auto mt-[5rem] justify-between items-center ">
-          <div className="flex justify-center items-center align-middle pr-3 text-center">
-          <h1 className="text-zinc-100  text-[70px] font-extrabold font-['Varino'] leading-[140px] tracking-[15px] absolute">GAMING </h1>
-            <img src={GamingCard} className="w-[38rem] h-[18rem]"></img>
-          </div>
-          <div className="flex justify-center items-center align-middle">
-            <img src={GamingCard} className="w-[38rem] h-[18rem] "></img>
-          </div>
-        </div>
-        <div className="flex flex-row mx-auto pt-3 justify-between items-center">
-          <div className="flex justify-center items-center align-middle pr-3">
-            <img src={GamingCard} className="w-[38rem] h-[18rem] "></img>
-          </div>
-          <div className="flex justify-center items-center align-middle">
-            <img src={GamingCard} className="w-[38rem] h-[18rem] "></img>
-          </div>
-        </div>
-       
-      </div> */}
-
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row justify-center relative">
         <div className="flex flex-col lg:m-[5rem] absolute z-10">
           <div className="flex flex-row  items-center justify-between lg:gap-4 m-card1">
-            <div onClick={handleGamecardClick} className="flex justify-center items-center align-middle  cursor-pointer ">
+            <div
+              onClick={handleGamecardClick}
+              className="flex justify-center items-center align-middle  cursor-pointer "
+            >
               <img
-                src={gamecard} alt="gamecard"
-                className={`w-[33rem]  card1 tilt ${showFirstCard ? "show" : ""}`}
+                src={gamecard}
+                alt="gamecard"
+                className={`w-[33rem]   card1 tilt ${
+                  showFirstCard ? "show" : ""
+                }`}
               />
             </div>
-            <div className="flex justify-center items-center align-middle cursor-pointer">
+            <div
+              onClick={handleTechnutzcardClick}
+              className="flex justify-center items-center align-middle cursor-pointer"
+            >
               <img
-                src={technutzcard} alt="technutzcard"
-                className={`w-[33rem] card2 tilt ${showSecondCard ? "show" : ""}`}
+                src={technutzcard}
+                alt="technutzcard"
+                className={`w-[33rem] card2 tilt ${
+                  showSecondCard ? "show" : ""
+                }`}
               />
             </div>
           </div>
           <div className="flex flex-row lg:pt-3 lg:gap-4 justify-between items-center m-card2">
-            <div className="flex justify-center items-center align-middle cursor-pointer">
+            <div
+              onClick={handleCodexcardClick}
+              className="flex justify-center items-center align-middle cursor-pointer"
+            >
               <img
-                src={codexcard} alt="codexcard"
-                className={`w-[33rem] card3 tilt ${showThirdCard ? "show" : ""}`}
+                src={codexcard}
+                alt="codexcard"
+                className={`w-[33rem] card3 tilt ${
+                  showThirdCard ? "show" : ""
+                }`}
               />
             </div>
-            <div className="flex justify-center items-center align-middle cursor-pointer">
+            <div
+              onClick={handleWebdevcardClick}
+              className="flex justify-center items-center align-middle cursor-pointer"
+            >
               <img
-                src={WebdevCard} alt="WebdevCard"
-                className={`w-[33rem] card4  tilt ${showFourthCard ? "show" : ""}`}
+                src={WebdevCard}
+                alt="WebdevCard"
+                className={`w-[33rem] card4  tilt ${
+                  showFourthCard ? "show" : ""
+                }`}
               />
             </div>
           </div>
