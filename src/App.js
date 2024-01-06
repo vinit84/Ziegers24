@@ -5,8 +5,16 @@ import Home from './components/home';
 import Eventpage from './components/Eventpage';
 
 // import ScrollComponent from './components/ScrollComponent';
-import GamingPage from './components/Events/Gaming';
+import ScrollToTop from './components/ScrollToTop';
 import Valorant from './components/Gaming Events/Valorant';
+import Cod from './components/Gaming Events/Cod';
+import Bgmi from './components/Gaming Events/Bgmi';
+import Fifa from './components/Gaming Events/Fifa';
+import Granturismo from './components/Gaming Events/Granturismo';
+import Webdev from './components/Events/Webdev';
+import Codex from './components/Events/Codex';
+import Gaming from './components/Events/Gaming';
+import Technutz from './components/Events/Technutz';
 // import LocomotiveScrollComponent from './components/LocomotiveScrollComponent';
 
 
@@ -19,15 +27,20 @@ function App() {
     <>
      {/* <ScrollComponent/>
      <LocomotiveScrollComponent/> */}
+     <ScrollToTop />
     <AnimatePresence mode='wait'>
     <Routes location={location} key={location.pathname}>
       <Route path="/*" element={<Home/>}/>
       <Route path="/events" element={<Eventpage/>} />
-      <Route path="/events/gaming" element={<GamingPage/>} />
+      <Route path="/events/gaming" element={<Gaming/>} />
       <Route path="/events/gaming/valorant" element={<Valorant/>} />
-      {/* <Route path="/events/technutz" element={<GamingPage/>} />
-      <Route path="/events/codex" element={<GamingPage/>} />
-      <Route path="/events/webdev" element={<GamingPage/>} /> */}
+      <Route path="/events/gaming/callofduty" element={<Cod/>} />
+      <Route path="/events/gaming/bgmi" element={<Bgmi/>} />
+      <Route path="/events/gaming/fifa2k23" element={<Fifa/>} />
+      <Route path="/events/gaming/granttruismo7" element={<Granturismo/>} />
+      <Route path="/events/webdev" element={<Webdev/>} />
+      <Route path="/events/technutz" element={<Technutz/>} />
+      <Route path="/events/codex" element={<Codex/>} />
       
      </Routes> 
     </AnimatePresence>

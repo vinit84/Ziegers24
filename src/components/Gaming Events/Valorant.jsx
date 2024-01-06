@@ -93,14 +93,14 @@ const Valorant = () => {
       </nav>
       <div className="font-varino">
         <div>
-          <div className="flex justify-end ">
+          <div className="flex justify-end z-10">
             <svg
               width="300"
               height="341"
               viewBox="0 0 382 341"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-[2rem] right-[2px]"
+              className="absolute top-[2rem] right-[5px] z-10"
             >
               <path
                 d="M0 135.107C0 108.981 0 95.9175 2.42664 85.1039C10.8952 47.3661 40.3661 17.8952 78.1039 9.42664C88.9175 7 101.981 7 128.107 7H143.832C151.85 7 159.774 8.72531 167.066 12.0588L168.579 12.7504C182.779 19.2416 199.134 19.0562 213.183 12.2447C220.302 8.79315 228.11 7 236.022 7H253.507C279.993 7 293.236 7 304.192 9.4935C341.69 18.0279 370.972 47.3098 379.507 84.8081C382 95.7639 382 109.007 382 135.493V174C382 236.624 382 267.935 368.471 291.227C359.744 306.252 347.252 318.744 332.227 327.471C308.935 341 277.624 341 215 341H167C104.376 341 73.0647 341 49.7734 327.471C34.7481 318.744 22.2561 306.252 13.5287 291.227C0 267.935 0 236.624 0 174V135.107Z"
@@ -118,7 +118,7 @@ const Valorant = () => {
               height="111"
               viewBox="0 0 105 111"
               fill="none"
-              className="absolute translate-y-[7rem] mr-[2.5rem]"
+              className="absolute top-[7rem] mr-[2.5rem] z-10"
             >
               <path
                 d="M47.0275 21.0951L37.38 55.5022C37.0234 56.7732 36.4299 57.9555 35.6346 58.9789C34.8393 60.0024 33.8583 60.8462 32.7498 61.4604C31.6413 62.0746 30.4278 62.4467 29.1812 62.5546C27.9347 62.6626 26.6803 62.5042 25.4925 62.0888L11.2375 57.1057C9.94781 56.655 8.76623 55.9118 7.77497 54.9278C6.78371 53.9438 6.00657 52.7426 5.49761 51.4079C4.98865 50.0731 4.76011 48.6368 4.82787 47.1988C4.89563 45.7609 5.25808 44.3559 5.88999 43.0816L24.6275 5.29765C25.3848 3.77083 26.5049 2.48003 27.8771 1.55292C29.2492 0.6258 30.8258 0.094473 32.451 0.0114781C34.0762 -0.0715169 35.6937 0.296695 37.1435 1.0797C38.5933 1.86271 39.8253 3.03339 40.7175 4.47597L45.8875 12.8359C46.6327 14.0418 47.1207 15.4055 47.3176 16.832C47.5145 18.2585 47.4155 19.7133 47.0275 21.0951Z"
@@ -145,7 +145,7 @@ const Valorant = () => {
                 fill="#282A36"
               />
             </svg>
-            <div className="flex flex-row">
+            <div className="flex flex-row z-10">
               <div className=" absolute text-white text-xl font-semibold font-['Outfit'] translate-y-[7.5rem] -translate-x-[16.5rem]">
                 Registration
                 <br />
@@ -186,95 +186,199 @@ const Valorant = () => {
                       </svg>
                     </div>
                   </div>
-                  <div className="left-[30px] top-[30px] absolute text-white text-[25px] font-semibold">
-                    ₹49
+                  <div className="left-[30px] top-[30px] absolute text-white text-[20px] font-semibold">
+                    ₹200/Team
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex justify-center translate-x-[-6.2rem] valo-btn cursor-pointer">
-            <div className="absolute flex translate-y-[35rem] ">
-              <div className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 absolute bg-lime-400 rounded-[100px]">
-                <div className="left-[2rem] absolute text-neutral-900 text-[22px] font-semibold font-['Outfit']">
-                  Participate
+          <div className="relative flex justify-center">
+            <div className="flex justify-center valo-btn cursor-pointer absolute z-10 mx-auto bottom-[4.7rem]">
+              <div className="flex justify-center ">
+                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#CFFB25] rounded-[100px]">
+                  <div className="left-[2rem] absolute text-neutral-900 text-[22px] font-semibold font-['Outfit']">
+                    Participate
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="flex ml-[9.5rem]"
+                    >
+                      <path
+                        d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
+                        stroke="#000000"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M3.5 12H20.33"
+                        stroke="#000000"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
-                <div>
+              </div>
+            </div>
+
+            <img src={banner} alt="webdevbanner" className="w-screen"></img>
+
+            <div className=" absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center">
+              <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle">
+                <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="21"
-                    height="24"
-                    viewBox="0 0 24 24"
+                    width="30"
+                    height="25"
+                    viewBox="0 0 38 38"
                     fill="none"
-                    className="flex ml-[11.5rem]"
                   >
                     <path
-                      d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
-                      stroke="#0B0C10"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M8.61073 0.672852C9.39667 0.672852 10.0338 1.30998 10.0338 2.09593V4.94208H27.1107V2.09593C27.1107 1.30998 27.7479 0.672852 28.5338 0.672852C29.3197 0.672852 29.9569 1.30998 29.9569 2.09593V4.94208H31.38C34.5237 4.94208 37.0723 7.49062 37.0723 10.6344V31.9805C37.0723 35.1243 34.5237 37.6729 31.38 37.6729H5.76457C2.6208 37.6729 0.0722656 35.1243 0.0722656 31.9805V10.6344C0.0722656 7.49062 2.6208 4.94208 5.76457 4.94208H7.18765V2.09593C7.18765 1.30998 7.82478 0.672852 8.61073 0.672852ZM34.2261 17.7498C34.2261 16.1779 32.9518 14.9036 31.38 14.9036H5.76457C4.19269 14.9036 2.91842 16.1779 2.91842 17.7498V31.9805C2.91842 33.5524 4.19269 34.8267 5.76457 34.8267H31.38C32.9518 34.8267 34.2261 33.5524 34.2261 31.9805V17.7498Z"
+                      fill="#F3F3F3"
                     />
+                  </svg>
+                  <div className=" font-readex text-[#F3F3F3]">
+                    18th January
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="25"
+                    viewBox="0 0 38 38"
+                    fill="none"
+                  >
                     <path
-                      d="M3.5 12H20.33"
-                      stroke="#0B0C10"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
+                      d="M19.0605 9.92285V19.1729H25.998M32.9355 19.1729C32.9355 26.8358 26.7235 33.0478 19.0605 33.0478C11.3976 33.0478 5.18555 26.8358 5.18555 19.1729C5.18555 11.5099 11.3976 5.29785 19.0605 5.29785C26.7235 5.29785 32.9355 11.5099 32.9355 19.1729Z"
+                      stroke="#F3F3F3"
+                      stroke-width="2.47513"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
+                  <div className=" font-readex text-[#F3F3F3]">
+                    10:00 AM to 12:00 PM
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="25"
+                    viewBox="0 0 38 38"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M17.8383 35.1307C17.8849 35.1577 17.9215 35.1785 17.9474 35.1931L17.9904 35.2171C18.334 35.4057 18.7602 35.4043 19.1041 35.2177L19.1483 35.1931C19.1742 35.1785 19.2108 35.1577 19.2574 35.1307C19.3505 35.0768 19.4836 34.9981 19.6509 34.895C19.9854 34.6891 20.4576 34.3854 21.0216 33.9869C22.1478 33.1914 23.6504 32.011 25.1563 30.4692C28.1535 27.4005 31.2666 22.7898 31.2666 16.8603C31.2666 9.83598 25.5722 4.1416 18.5479 4.1416C11.5235 4.1416 5.8291 9.83598 5.8291 16.8603C5.8291 22.7898 8.94222 27.4005 11.9394 30.4692C13.4453 32.011 14.9479 33.1914 16.0741 33.9869C16.6381 34.3854 17.1103 34.6891 17.4448 34.895C17.6121 34.9981 17.7452 35.0768 17.8383 35.1307ZM18.5479 21.4853C21.1022 21.4853 23.1728 19.4147 23.1728 16.8604C23.1728 14.306 21.1022 12.2354 18.5479 12.2354C15.9935 12.2354 13.9229 14.306 13.9229 16.8604C13.9229 19.4147 15.9935 21.4853 18.5479 21.4853Z"
+                      fill="#F3F3F3"
+                    />
+                  </svg>
+                  <div className=" font-readex text-[#F3F3F3]">
+                    CS Lab,4th Floor
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <img
-            src={banner}
-            alt="valorantbanner"
-            className="flex w-screen"
-          ></img>
-          <div className="w-[100vw] h-[419px] absolute valorantbanneroverlay top-[35rem] -z-1"></div>
+
+          <div className="w-[100vw] h-[450px] absolute valorantbanneroverlay top-[28rem] -z-1"></div>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-[40px] items-center max-w-[950px] mx-auto mt-52 mb-20">
-        <div className="text-[21px] font-inter text-center text-[#D4D4D4] tracking-[1.15px] font-medium ">
-          Valorant LAN tournament is a competitive event featuring some of the best teams competing against each other 
-          in the popular first-person shooter game, Valorant. The tournament will be played in a LAN (Local Area Network) 
-          setup, where all the participating teams will be physically present in the same location to play their matches. 
-          The tournament will feature a prize pool for the winning team. It aims to bring together the best teams and fans 
-          of Valorant to showcase their skills and enjoy the game together in a face to face environment which will add an 
-          extra layer of excitement and pressure.
+      <div className="flex flex-col justify-center gap-[40px] items-center max-w-[950px] mx-auto mt-[3rem] mb-20">
+        <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard translate-y-[-1rem] justify-center align-middle">
+          <div className="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="25"
+              viewBox="0 0 38 38"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.61073 0.672852C9.39667 0.672852 10.0338 1.30998 10.0338 2.09593V4.94208H27.1107V2.09593C27.1107 1.30998 27.7479 0.672852 28.5338 0.672852C29.3197 0.672852 29.9569 1.30998 29.9569 2.09593V4.94208H31.38C34.5237 4.94208 37.0723 7.49062 37.0723 10.6344V31.9805C37.0723 35.1243 34.5237 37.6729 31.38 37.6729H5.76457C2.6208 37.6729 0.0722656 35.1243 0.0722656 31.9805V10.6344C0.0722656 7.49062 2.6208 4.94208 5.76457 4.94208H7.18765V2.09593C7.18765 1.30998 7.82478 0.672852 8.61073 0.672852ZM34.2261 17.7498C34.2261 16.1779 32.9518 14.9036 31.38 14.9036H5.76457C4.19269 14.9036 2.91842 16.1779 2.91842 17.7498V31.9805C2.91842 33.5524 4.19269 34.8267 5.76457 34.8267H31.38C32.9518 34.8267 34.2261 33.5524 34.2261 31.9805V17.7498Z"
+                fill="#F3F3F3"
+              />
+            </svg>
+            <div className=" font-readex text-[#F3F3F3]">18th January</div>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="25"
+              viewBox="0 0 38 38"
+              fill="none"
+            >
+              <path
+                d="M19.0605 9.92285V19.1729H25.998M32.9355 19.1729C32.9355 26.8358 26.7235 33.0478 19.0605 33.0478C11.3976 33.0478 5.18555 26.8358 5.18555 19.1729C5.18555 11.5099 11.3976 5.29785 19.0605 5.29785C26.7235 5.29785 32.9355 11.5099 32.9355 19.1729Z"
+                stroke="#F3F3F3"
+                stroke-width="2.47513"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div className=" font-readex text-[#F3F3F3]">
+              10:00 AM to 12:00 PM
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="25"
+              viewBox="0 0 38 38"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.8383 35.1307C17.8849 35.1577 17.9215 35.1785 17.9474 35.1931L17.9904 35.2171C18.334 35.4057 18.7602 35.4043 19.1041 35.2177L19.1483 35.1931C19.1742 35.1785 19.2108 35.1577 19.2574 35.1307C19.3505 35.0768 19.4836 34.9981 19.6509 34.895C19.9854 34.6891 20.4576 34.3854 21.0216 33.9869C22.1478 33.1914 23.6504 32.011 25.1563 30.4692C28.1535 27.4005 31.2666 22.7898 31.2666 16.8603C31.2666 9.83598 25.5722 4.1416 18.5479 4.1416C11.5235 4.1416 5.8291 9.83598 5.8291 16.8603C5.8291 22.7898 8.94222 27.4005 11.9394 30.4692C13.4453 32.011 14.9479 33.1914 16.0741 33.9869C16.6381 34.3854 17.1103 34.6891 17.4448 34.895C17.6121 34.9981 17.7452 35.0768 17.8383 35.1307ZM18.5479 21.4853C21.1022 21.4853 23.1728 19.4147 23.1728 16.8604C23.1728 14.306 21.1022 12.2354 18.5479 12.2354C15.9935 12.2354 13.9229 14.306 13.9229 16.8604C13.9229 19.4147 15.9935 21.4853 18.5479 21.4853Z"
+                fill="#F3F3F3"
+              />
+            </svg>
+            <div className=" font-readex text-[#F3F3F3]">CS Lab,4th Floor</div>
+          </div>
         </div>
-        <div className="font-varino text-[90px] tracking-[4.9px] text-center valorantrules">RULES</div>
-        <div className="rulescard">
-          <ul className="p-[45px_40px] flex flex-col text-left gap-3 text-[#D4D4D4] text-[20px] font-inter" style={{ listStyleType: 'disc' }}>
-            <li> Players competing in the Ziegers 2024 tournament for Valorant, The Server will be LAN.</li>
-            <li> Any form of abuse of any staff member is prohibited. If a user does abuse a staff member, that user risks a disqualification from the match.</li>
-            <li> Tournament bracket size and prize are subject to change depending on the total number of eligible teams at the start of a tournament</li>
-            <li> After a Private Match has been created, only players on the (2) teams and Ziegers Staff members may be invited/join. If a player that is not a 
-            registered member of one of the teams (ineligible player) joins a game, the game must be ended. If a player is found to have invited an ineligible 
-            player to a game, a forfeit may be issued.</li>
-            <li> If a player lags out during the first 30 seconds the game should be ended and restarted for all game modes unless damage is inflicted by the opposing team prior to said time.</li>
-            <li> If a player lags out after the first 30 seconds and/or after the first kill (damage inflicted), the match must continue.</li>
-            <li> Any form of cheating, using a glitch, abusing in-game mechanics, or unsportsmanlike behavior may result in a forfeit of the game.</li>
-            <li> Ziegers reserves the right to broadcast any match.</li>
-            <li> Third party communication is not allowed for this tournament. However, players are allowed to leave the current party and form a new one 
-            with their teammates only after the match has begun.</li>
-            <li> If your team is competing in multiple Ziegers events at once, your team has 20 minutes from the scheduled match time to play the match 
-            or your team risks being reported as a no show which can lead to a forfeit of the match or being forced to playing man down.</li>
-            <li> Tournament matches are expected to be played at the scheduled match time. If an opposing team fails to show up after 10 
-            minutes after the scheduled match time, the team will be disqualified under a No Show.</li>
-            <li> Teams have up to 5 minutes between maps. Extra time may be given if Ziegers Staff feels it’s necessary to extend the 5 minute time limit.</li>
-            <li> The loser's brackets matchmaking will be done on a random basis by the Ziegers Staff.</li>
-            <li> If a team has a technical issue, they are allowed to use the pause function. A pause can last up to 5 minutes per match per team. The team 
-            has to announce the reason before or immediately after they paused the match.</li>
-          </ul>
+
+        <div className="text-[21px] font-inter text-center text-[#D4D4D4] tracking-[1.15px] font-medium z-10">
+          Valorant LAN tournament is a competitive event featuring some of the
+          best teams competing against each other in the popular first-person
+          shooter game, Valorant. The tournament will be played in a LAN (Local
+          Area Network) setup, where all the participating teams will be
+          physically present in the same location to play their matches. The
+          tournament will feature a prize pool for the winning team. It aims to
+          bring together the best teams and fans of Valorant to showcase their
+          skills and enjoy the game together in a face to face environment which
+          will add an extra layer of excitement and pressure.
         </div>
+
         <div className="valorantmapselection w-[950px]">
           <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center">
-            <div className="font-medium">Map Selection Process for Best-of-One Matches:</div>
-            <ul className="flex flex-col gap-3 items-center text-center" style={{ listStyleType: 'disc' }}>
+            <div className="font-medium">
+              Map Selection Process for Best-of-One Matches:
+            </div>
+            <ul
+              className="flex flex-col gap-3 items-center text-center"
+              style={{ listStyleType: "disc" }}
+            >
               <li> Team A bans 1 Map</li>
               <li> Team B bans 1 Map</li>
               <li> Team A bans 1 Map</li>
@@ -287,9 +391,10 @@ const Valorant = () => {
           </div>
         </div>
         <div className="valorantnote text-[#D05555] text-center text-[20px] font-inter italic font-medium tracking-[1.15px]">
-        *NOTE: Any sort of damage to the property of Ziegers and the concerned authorities will not 
-        be tolerated and the one's responsible will be sanctioned with penalties and can also be charged 
-        a fine depending on the damage done.
+          *NOTE: Any sort of damage to the property of Ziegers and the concerned
+          authorities will not be tolerated and the one's responsible will be
+          sanctioned with penalties and can also be charged a fine depending on
+          the damage done.
         </div>
       </div>
     </div>

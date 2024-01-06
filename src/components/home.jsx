@@ -5,7 +5,7 @@ import sphere1 from "../../src/assets/planet.png";
 import sphere2 from "../../src/assets/planet2.svg";
 import sphere3 from "../../src/assets/planet3.svg";
 import { useNavigate } from "react-router-dom";
-import transition from "../transition";
+// import transition from "../transition";
 
 function Home() {
   const navigate = useNavigate();
@@ -141,7 +141,7 @@ function Home() {
             Ziegers enables participants to discover <br /> connections that was
             not possible before.
           </p>
-        
+
           <div
             onClick={handleRegisterClick}
             className="flex fuller-button justify-center items-center mt-4 rounded-[100px] text-[#F9F9FF] font-varino bg-[#09090A] shadow-[0_1.417px_2.834px_0_rgba(0, 0, 0, 0.05)] p-[20px_10px_20px_15px] inline-flex items-center justify-center gap-1 h-[3.5rem] cursor-pointer register-button"
@@ -163,13 +163,10 @@ function Home() {
             <span className=" w-[123px] text-[10.5px] text-center font-normal translate-y-[0.5px]">
               Register now
             </span>
-
-            
           </div>
         </div>
-  
       </div>
-      
+
       <img
         src={sphere1}
         alt="bottomleft"
@@ -203,4 +200,4 @@ function Home() {
     </div>
   );
 }
-export default transition(Home);
+export default Home;
