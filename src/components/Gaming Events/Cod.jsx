@@ -1,18 +1,34 @@
+
 import React from "react";
 import banner from "../../assets/codbanner.png";
+import mobilebanner from "../../assets/m-codbanner.png";
 import transition from "../../transition";
+import OutsideClickHandler from "react-outside-click-handler";
+import menu from "../../assets/menu.svg";
+import { useState } from "react";
 
 const Cod = () => {
+  const [menuOpened, setMenuOpened] = useState(false);
+  const getMenuStyles = (menuOpened) => {
+    if (document.documentElement.clientWidth <= 800) {
+      return { right: !menuOpened && "-100%" };
+    }
+  };
   return (
     <section className="bg-[#0A0A0B] overflow-x-hidden">
-      <nav
-        className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between bg-[#000000CC] rounded-es-[100px] rounded-br-[100px] bg-opacity-80 absolute"
+       <nav
+        className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between bg-[#000000CC] rounded-es-[100px] rounded-br-[100px] bg-opacity-80 absolute m-gaming-nav"
         style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
       >
-        <div className="flex flex-row justify-evenly items-center align-middle mb-[1rem] ml-[3rem]">
+        <OutsideClickHandler
+        onOutsideClick={() => {
+          setMenuOpened(false);
+        }}
+      >
+        <div className="flex flex-row justify-evenly items-center align-middle h-menus lg:mb-[1rem]  ml-[3rem]"  style={getMenuStyles(menuOpened)}>
           <a
             href="h"
-            className="flex justify-center items-center align-middle font-varino text-focus-in nav-text"
+            className="flex justify-center items-center align-middle font-varino text-focus-in navbar-text"
           >
             Contact
           </a>
@@ -21,7 +37,7 @@ const Cod = () => {
             height="34"
             viewBox="0 0 34 34"
             fill="none"
-            className="text-focus-in"
+            className="text-focus-in m-hide"
             xmlns="http://www.w3.org/2000/svg"
           >
             <g id="Huge-icon/arrows/outline/arrow-down">
@@ -35,13 +51,13 @@ const Cod = () => {
               />
             </g>
           </svg>
-          <a href="h" className="font-varino ml-3 text-focus-in nav-text">
+          <a href="h" className="font-varino ml-3 text-focus-i navbar-text">
             About
           </a>
           <svg
             width="34"
             height="34"
-            className="text-focus-in"
+            className="text-focus-in m-hide"
             viewBox="0 0 34 34"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -58,9 +74,10 @@ const Cod = () => {
             </g>
           </svg>
         </div>
+        </OutsideClickHandler>
         <a
           href="/"
-          className="font-varino font-bold mx-auto text-xl translate-x-[-2.7rem] mb-[1rem] text-focus-in logo-text"
+          className="font-varino font-bold mx-auto text-xl translate-x-[-2.7rem] lg:mb-[1rem] text-focus-in logo-text"
           style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.8)" }}
         >
           ZIEGERS
@@ -68,7 +85,7 @@ const Cod = () => {
 
         <a
           href="h"
-          className="text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[5rem] bg-[#D6014C] from-zinc-950  rounded-full shadow border border-[#D6014C] justify-start items-center inline-flex instagram-button mb-[0.5rem]"
+          className="m-hide text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[5rem] bg-[#D6014C] from-zinc-950  rounded-full shadow border border-[#D6014C] justify-start items-center inline-flex instagram-button mb-[0.5rem]"
         >
           <div className="w-4 h-4 relative flex-col justify-start items-start flex " />
           <div className="text-center text-white  text-xs font-normal font-['Varino'] flex flex-row justify-center items-center align-middle">
@@ -90,10 +107,21 @@ const Cod = () => {
             <h1 className="ml-2 m-insta">Instagram</h1>
           </div>
         </a>
+        <div
+        className="flex menu-icon cursor-pointer flex-row  justify-end mx-auto m-game-menu"
+        onClick={() => setMenuOpened((prev) => !prev)}
+      >
+        <img
+          src={menu}
+          alt="menu"
+          width="50px"
+          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2"
+        ></img>
+      </div>
       </nav>
       <div className="font-varino">
         <div>
-          <div className="flex justify-end z-10">
+          <div className="lg:flex justify-end z-10 hidden">
             <svg
               width="300"
               height="341"
@@ -197,8 +225,8 @@ const Cod = () => {
           <div className="relative flex justify-center">
             <div className="flex justify-center cod-btn cursor-pointer absolute z-10 mx-auto bottom-[8.5rem]">
               <div className="flex justify-center ">
-                <div className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 bg-[#D6014C] rounded-[100px] ">
-                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit']">
+                <div className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 bg-[#D6014C] rounded-[100px] m-cod-btn ">
+                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
                     Participate
                   </div>
                   <div className="flex align-middle ">
@@ -208,7 +236,7 @@ const Cod = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      className="flex ml-[11.3rem]"
+                      className="flex ml-[11.3rem] m-arrow"
                     >
                       <path
                         d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
@@ -231,14 +259,16 @@ const Cod = () => {
                 </div>
               </div>
             </div>
-            <img src={banner} alt="webdevbanner" className="w-screen"></img>
+            <img src={banner} alt="webdevbanner" className="w-screen m-hide"></img>
+            <img src={mobilebanner} alt="webdevbanner" className="w-screen lg:hidden"></img>
             <div className=" absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center">
-              <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle">
-                <div className="flex items-center gap-2">
+            <div className=" inline-flex lg:p-[25px] items-center lg:gap-5 lg:rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle m-venue-box">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-calender"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -253,11 +283,12 @@ const Cod = () => {
                     18th January
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-time"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -273,11 +304,12 @@ const Cod = () => {
                     10:00 AM to 12:00 PM
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-location"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -297,8 +329,8 @@ const Cod = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-[40px] items-center max-w-[950px] mx-auto mt-[10rem] mb-20">
-        <div className="text-[21px] font-inter text-center text-[#D4D4D4] tracking-[1.15px] font-medium z-10">
+      <div className="flex flex-col justify-center gap-[40px] items-center max-w-[950px] mx-auto lg:mt-[10rem] mb-20">
+        <div className="text-[21px] font-inter text-center text-[#D4D4D4] tracking-[1.15px] font-medium z-10 m-bgmi-desc">
           Call of Duty Mobile is a competitive event for the best teams
           competing against each other in the popular first-person shooter game,
           Call of Duty Mobile. The tournament will be played in the Team
@@ -310,14 +342,14 @@ const Cod = () => {
         </div>
       </div>
 
-      <div className="flex flex-col text-center justify-center z-10 pt-[10rem]">
+      <div className="flex flex-col text-center justify-center z-10 lg:pt-[10rem] m-lgsvg">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1400"
           height="350"
           viewBox="0 0 1920 491"
           fill="none"
-          className="relative z-[10rem] mt-[-15.5rem] -mb-[5rem]"
+          className="relative z-[10rem] mt-[-15.5rem] -mb-[5rem] m-rule-banner"
         >
           <path
             d="M-21.6252 490.432L-22.2461 308.932L2319.61 0.704816L2221.19 189.569L-21.6252 490.432Z"
@@ -342,52 +374,52 @@ const Cod = () => {
             </linearGradient>
           </defs>
         </svg>
-        <div className="text-zinc-100 text-[80px] font-normal font-['Varino'] translate-y-[-9.7rem] leading-[137.20px] tracking-[4.90px] z-10">
+        <div className="text-zinc-100 text-[80px] font-normal font-['Varino'] translate-y-[-9.7rem] leading-[137.20px] tracking-[4.90px] z-10 m-rule-text">
           RULES
         </div>
       </div>
 
-      <div className="flex flex-col items-center text-center ">
+      <div className="flex flex-col items-center text-center m-rules">
         <div className="relative flex text-center flex-col items-center justify-center">
-          <div className="text-center text-white text-opacity-10 text-[70px] font-bold font-['Readex Pro']">
+          <div className="text-center text-white text-opacity-10 text-[70px] font-bold font-['Readex Pro'] m-rule-no-1">
             01
           </div>
-          <div className="text-center z-10 translate-y-[-3rem] text-white text-[30px] font-semibold font-['Readex Pro']">
+          <div className="text-center z-10 translate-y-[-3rem] text-white text-[30px] font-semibold font-['Readex Pro'] m-codm-rule-1">
             Finger Sleeves are allowed
           </div>
-          <div className="w-[355px] h-[20px] translate-y-[-4.2rem] bg-gradient-to-r from-zinc-950 to-rose-600" />
-          <div className="text-center text-white text-opacity-10 text-[80px] font-bold font-['Readex Pro']">
+          <div className="w-[355px] h-[20px] translate-y-[-4.2rem] bg-gradient-to-r from-zinc-950 to-rose-600 m-rule-underlay-1" />
+          <div className="text-center text-white text-opacity-10 text-[80px] font-bold font-['Readex Pro'] m-rule-no-2">
             02
           </div>
-          <div className="text-center z-10 max-w-[35rem] translate-y-[-3rem] text-white text-[35px] font-semibold font-['Readex Pro'] leading-[40px]">
+          <div className="text-center z-10 max-w-[35rem] translate-y-[-3rem] text-white text-[35px] font-semibold font-['Readex Pro'] lg:leading-[40px] m-codm-rule-2">
             The match will be conducted in TDM mode
           </div>
-          <div className="w-[493px] h-[20px] translate-y-[-6.4rem] bg-gradient-to-r from-zinc-950 to-rose-600" />
-          <div className="text-center  text-white text-opacity-10 text-[90px] font-bold font-['Readex Pro']">
+          <div className="w-[493px] h-[20px] translate-y-[-6.4rem] bg-gradient-to-r from-zinc-950 to-rose-600 m-rule-underlay-2" />
+          <div className="text-center  text-white text-opacity-10 text-[90px] font-bold font-['Readex Pro'] m-rule-no-3">
             03
           </div>
-          <div className="text-center z-10 max-w-[50rem] translate-y-[-3rem] text-white text-[40px] font-semibold font-['Readex Pro'] leading-[40px]">
+          <div className="text-center z-10 max-w-[50rem] translate-y-[-3rem] text-white text-[40px] font-semibold font-['Readex Pro'] lg:leading-[40px] m-codm-rule-3">
             Participants are required to bring their own smartphones.
           </div>
-          <div className="w-[780px] h-[20px] translate-y-[-6.4rem] bg-gradient-to-r from-zinc-950 to-rose-600" />
-          <div className="text-center  text-white text-opacity-10 text-[100px] font-bold font-['Readex Pro']">
+          <div className="w-[780px] h-[20px] translate-y-[-6.4rem] bg-gradient-to-r from-zinc-950 to-rose-600 m-rule-underlay-3" />
+          <div className="text-center  text-white text-opacity-10 text-[100px] font-bold font-['Readex Pro'] m-rule-no-4">
             04
           </div>
-          <div className="text-center  z-10 max-w-[54rem] translate-y-[-3.5rem] text-white text-[45px] font-semibold font-['Readex Pro'] leading-[45px]">
+          <div className="text-center  z-10 max-w-[54rem] translate-y-[-3.5rem] text-white text-[45px] font-semibold font-['Readex Pro'] lg:leading-[45px] m-codm-rule-4">
             Bracket size and prizes may vary based on the number of eligible
             teams at the tournament's start.
           </div>
-          <div className="w-[720px] h-[20px] translate-y-[-7.3rem] bg-gradient-to-r from-zinc-950 to-rose-600" />
-          <div className="w-[850px] h-[20px] translate-y-[-11.5rem] bg-gradient-to-r from-zinc-950 to-rose-600" />
+          <div className="w-[720px] h-[20px] translate-y-[-7.3rem] bg-gradient-to-r from-zinc-950 to-rose-600 m-rule-underlay-4" />
+          <div className="w-[850px] h-[20px] translate-y-[-11.5rem] bg-gradient-to-r from-zinc-950 to-rose-600 m-rule-underlay-5" />
         </div>
       </div>
 
-      <div className="flex flex-col mx-auto w-[950px] text-center">
-        <div className="text-zinc-100 text-[68px] font-normal font-['Varino'] leading-[137.20px] tracking-[4.90px] m-5">
+      <div className="flex flex-col mx-auto text-center max-w-[950px]">
+        <div className="text-zinc-100 text-[68px] font-normal font-['Varino'] tracking-[4.90px] m-5 m-rule-text">
           IN-Game RULES
         </div>
-        <div className="valorantmapselection w-[950px] mx-auto text-center p-5">
-          <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center">
+        <div className="valorantmapselection w-[950px] mx-auto text-center p-5 m-mapselection">
+          <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center m-map-rules">
             <ul
               className="flex flex-col gap-3 items-center text-center"
               style={{ listStyleType: "disc" }}
@@ -402,16 +434,16 @@ const Cod = () => {
               <li>
                 {" "}
                 Download the Ranked Maps (Map will be decided by
-                the Ziegers Teams)
+                the Ziegers Teams)
               </li>
             </ul>
           </div>
         </div>
-        <div className="valorantnote text-[#D05555] text-center mx-auto p-5  text-[20px] font-inter italic font-medium tracking-[1.15px]">
+        <div className="valorantnote text-[#D05555] text-center mx-auto p-5  text-[20px] font-inter italic font-medium tracking-[1.15px] m-note">
           *NOTE: Any sort of damage to the property of Ziegers and the concerned
           authorities will not be tolerated and the one's responsible will be
           sanctioned with penalties and can also be charged a fine depending on
-          the damage done.
+          the damage done.
         </div>
       </div>
     </section>

@@ -1,18 +1,35 @@
+
 import React from "react";
 import banner from "../../assets/valorantbanner.png";
+import mobilebanner from "../../assets/m-valorantbanner.png";
 import transition from "../../transition.js";
+import OutsideClickHandler from "react-outside-click-handler";
+import menu from "../../assets/menu.svg";
+import { useState } from "react";
 
 const Valorant = () => {
+  const [menuOpened, setMenuOpened] = useState(false);
+  const getMenuStyles = (menuOpened) => {
+    if (document.documentElement.clientWidth <= 800) {
+      return { right: !menuOpened && "-100%" };
+    }
+  };
   return (
     <div className="wrapper ">
-      <nav
-        className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between bg-[#000000CC] rounded-es-[100px] rounded-br-[100px] bg-opacity-80 absolute"
+      
+        <nav
+        className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between bg-[#000000CC] rounded-es-[100px] rounded-br-[100px] bg-opacity-80 absolute m-gaming-nav"
         style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
       >
-        <div className="flex flex-row justify-evenly items-center align-middle mb-[1rem] ml-[3rem]">
+        <OutsideClickHandler
+        onOutsideClick={() => {
+          setMenuOpened(false);
+        }}
+      >
+        <div className="flex flex-row justify-evenly items-center align-middle h-menus lg:mb-[1rem]  ml-[3rem]"  style={getMenuStyles(menuOpened)}>
           <a
             href="h"
-            className="flex justify-center items-center align-middle font-varino text-focus-in nav-text"
+            className="flex justify-center items-center align-middle font-varino text-focus-in navbar-text"
           >
             Contact
           </a>
@@ -21,7 +38,7 @@ const Valorant = () => {
             height="34"
             viewBox="0 0 34 34"
             fill="none"
-            className="text-focus-in"
+            className="text-focus-in m-hide"
             xmlns="http://www.w3.org/2000/svg"
           >
             <g id="Huge-icon/arrows/outline/arrow-down">
@@ -35,13 +52,13 @@ const Valorant = () => {
               />
             </g>
           </svg>
-          <a href="h" className="font-varino ml-3 text-focus-in nav-text">
+          <a href="h" className="font-varino ml-3 text-focus-i navbar-text">
             About
           </a>
           <svg
             width="34"
             height="34"
-            className="text-focus-in"
+            className="text-focus-in m-hide"
             viewBox="0 0 34 34"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -58,9 +75,10 @@ const Valorant = () => {
             </g>
           </svg>
         </div>
+        </OutsideClickHandler>
         <a
           href="/"
-          className="font-varino font-bold mx-auto text-xl translate-x-[-2.7rem] mb-[1rem] text-focus-in logo-text"
+          className="font-varino font-bold mx-auto text-xl translate-x-[-2.7rem] lg:mb-[1rem] text-focus-in logo-text"
           style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.8)" }}
         >
           ZIEGERS
@@ -68,10 +86,10 @@ const Valorant = () => {
 
         <a
           href="h"
-          className="text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[5rem] bg-[#CFFB25] from-zinc-950  rounded-full shadow border border-[#CFFB25] justify-start items-center inline-flex instagram-button mb-[0.5rem]"
+          className="m-hide text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[5rem] bg-[#B3FF00] from-zinc-950  rounded-full shadow border border-[#B3FF00] justify-start items-center inline-flex instagram-button mb-[0.5rem]"
         >
           <div className="w-4 h-4 relative flex-col justify-start items-start flex " />
-          <div className="text-center text-black  text-xs font-normal font-['Varino'] flex flex-row justify-center items-center align-middle">
+          <div className="text-center text-white  text-xs font-normal font-['Varino'] flex flex-row justify-center items-center align-middle">
             <svg
               width="16"
               height="16"
@@ -83,17 +101,29 @@ const Valorant = () => {
                 <path
                   id="Vector"
                   d="M11.6188 4.13967C11.4605 4.13967 11.3059 4.18659 11.1743 4.2745C11.0427 4.3624 10.9402 4.48735 10.8797 4.63353C10.8191 4.77971 10.8033 4.94056 10.8341 5.09575C10.865 5.25093 10.9412 5.39348 11.0531 5.50536C11.165 5.61724 11.3075 5.69343 11.4627 5.7243C11.6179 5.75517 11.7787 5.73933 11.9249 5.67878C12.0711 5.61823 12.196 5.51569 12.2839 5.38413C12.3718 5.25257 12.4188 5.0979 12.4188 4.93967C12.4188 4.7275 12.3345 4.52402 12.1844 4.37399C12.0344 4.22396 11.8309 4.13967 11.6188 4.13967ZM14.6854 5.75301C14.6725 5.19987 14.5689 4.65261 14.3788 4.13301C14.2092 3.68843 13.9454 3.28586 13.6054 2.95301C13.2753 2.61129 12.8718 2.34913 12.4254 2.18634C11.9072 1.99045 11.3593 1.88448 10.8054 1.87301C10.0988 1.83301 9.87209 1.83301 8.05876 1.83301C6.24542 1.83301 6.01876 1.83301 5.31209 1.87301C4.75819 1.88448 4.21032 1.99045 3.69209 2.18634C3.24654 2.35077 2.84338 2.61271 2.51209 2.95301C2.17037 3.28313 1.90821 3.68663 1.74542 4.13301C1.54953 4.65124 1.44356 5.19911 1.43209 5.75301C1.39209 6.45967 1.39209 6.68634 1.39209 8.49967C1.39209 10.313 1.39209 10.5397 1.43209 11.2463C1.44356 11.8002 1.54953 12.3481 1.74542 12.8663C1.90821 13.3127 2.17037 13.7162 2.51209 14.0463C2.84338 14.3866 3.24654 14.6486 3.69209 14.813C4.21032 15.0089 4.75819 15.1149 5.31209 15.1263C6.01876 15.1663 6.24542 15.1663 8.05876 15.1663C9.87209 15.1663 10.0988 15.1663 10.8054 15.1263C11.3593 15.1149 11.9072 15.0089 12.4254 14.813C12.8718 14.6502 13.2753 14.3881 13.6054 14.0463C13.9469 13.7147 14.211 13.3118 14.3788 12.8663C14.5689 12.3467 14.6725 11.7995 14.6854 11.2463C14.6854 10.5397 14.7254 10.313 14.7254 8.49967C14.7254 6.68634 14.7254 6.45967 14.6854 5.75301ZM13.4854 11.1663C13.4806 11.5895 13.4039 12.0088 13.2588 12.4063C13.1523 12.6965 12.9813 12.9586 12.7588 13.173C12.5425 13.3933 12.2809 13.564 11.9921 13.673C11.5946 13.8182 11.1753 13.8948 10.7521 13.8997C10.0854 13.933 9.83876 13.9397 8.08542 13.9397C6.33209 13.9397 6.08542 13.9397 5.41876 13.8997C4.97935 13.9079 4.54182 13.8402 4.12542 13.6997C3.84928 13.5851 3.59966 13.4149 3.39209 13.1997C3.17082 12.9855 3.00199 12.7231 2.89876 12.433C2.73599 12.0298 2.64572 11.601 2.63209 11.1663C2.63209 10.4997 2.59209 10.253 2.59209 8.49967C2.59209 6.74634 2.59209 6.49967 2.63209 5.83301C2.63508 5.40038 2.71406 4.97164 2.86542 4.56634C2.98279 4.28495 3.16293 4.03411 3.39209 3.83301C3.59463 3.60379 3.84495 3.42174 4.12542 3.29967C4.53179 3.15304 4.96009 3.07639 5.39209 3.07301C6.05876 3.07301 6.30542 3.03301 8.05876 3.03301C9.81209 3.03301 10.0588 3.03301 10.7254 3.07301C11.1486 3.07786 11.5679 3.15451 11.9654 3.29967C12.2684 3.41211 12.5403 3.59491 12.7588 3.83301C12.9772 4.03779 13.1479 4.28816 13.2588 4.56634C13.4069 4.9723 13.4836 5.40086 13.4854 5.83301C13.5188 6.49967 13.5254 6.74634 13.5254 8.49967C13.5254 10.253 13.5188 10.4997 13.4854 11.1663ZM8.05876 5.07967C7.38263 5.08099 6.72206 5.28269 6.16053 5.65929C5.59899 6.03588 5.16168 6.57047 4.90385 7.19551C4.64602 7.82055 4.57924 8.50799 4.71195 9.17096C4.84467 9.83394 5.17091 10.4427 5.64947 10.9203C6.12803 11.398 6.73743 11.723 7.40066 11.8544C8.06389 11.9859 8.7512 11.9177 9.37574 11.6587C10.0003 11.3997 10.534 10.9613 10.9095 10.399C11.285 9.83676 11.4854 9.1758 11.4854 8.49967C11.4863 8.04974 11.3982 7.60408 11.2262 7.18831C11.0543 6.77254 10.8018 6.39488 10.4833 6.07704C10.1649 5.7592 9.78672 5.50746 9.37062 5.33629C8.95452 5.16513 8.50868 5.07792 8.05876 5.07967ZM8.05876 10.7197C7.61968 10.7197 7.19047 10.5895 6.82539 10.3455C6.46031 10.1016 6.17577 9.75488 6.00774 9.34923C5.83972 8.94358 5.79575 8.49721 5.88141 8.06657C5.96707 7.63594 6.17851 7.24037 6.48898 6.9299C6.79945 6.61942 7.19502 6.40799 7.62566 6.32233C8.05629 6.23667 8.50266 6.28063 8.90831 6.44866C9.31397 6.61669 9.66068 6.90123 9.90462 7.26631C10.1486 7.63139 10.2788 8.0606 10.2788 8.49967C10.2788 8.79121 10.2213 9.07989 10.1098 9.34923C9.9982 9.61857 9.83468 9.86331 9.62853 10.0695C9.42239 10.2756 9.17766 10.4391 8.90831 10.5507C8.63897 10.6623 8.35029 10.7197 8.05876 10.7197Z"
-                  fill="#000000"
+                  fill="#f3f3f3"
                 />
               </g>
             </svg>
             <h1 className="ml-2 m-insta">Instagram</h1>
           </div>
         </a>
+        <div
+        className="flex menu-icon cursor-pointer flex-row  justify-end mx-auto m-game-menu"
+        onClick={() => setMenuOpened((prev) => !prev)}
+      >
+        <img
+          src={menu}
+          alt="menu"
+          width="50px"
+          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2"
+        ></img>
+      </div>
+      
       </nav>
       <div className="font-varino">
         <div>
-          <div className="flex justify-end z-10">
+          <div className="lg:flex justify-end z-10 hidden">
             <svg
               width="300"
               height="341"
@@ -196,8 +226,8 @@ const Valorant = () => {
           <div className="relative flex justify-center">
             <div className="flex justify-center valo-btn cursor-pointer absolute z-10 mx-auto bottom-[4.7rem]">
               <div className="flex justify-center ">
-                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#CFFB25] rounded-[100px]">
-                  <div className="left-[2rem] absolute text-neutral-900 text-[22px] font-semibold font-['Outfit']">
+                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#CFFB25] rounded-[100px] m-valo-btn">
+                  <div className="left-[2rem] absolute text-neutral-900 text-[22px] font-semibold font-['Outfit'] m-participate-text">
                     Participate
                   </div>
                   <div>
@@ -207,7 +237,7 @@ const Valorant = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      className="flex ml-[9.5rem]"
+                      className="flex ml-[9.5rem] m-arrow"
                     >
                       <path
                         d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
@@ -231,15 +261,17 @@ const Valorant = () => {
               </div>
             </div>
 
-            <img src={banner} alt="webdevbanner" className="w-screen"></img>
+            <img src={banner} alt="webdevbanner" className="w-screen m-hide"></img>
+            <img src={mobilebanner} alt="webdevbanner" className="w-screen lg:hidden"></img>
 
-            <div className=" absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center">
-              <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle">
-                <div className="flex items-center gap-2">
+            <div className=" absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center m-valorant-overlay">
+            <div className=" inline-flex lg:p-[25px] items-center lg:gap-5 lg:rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle m-venue-box">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-calender"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -254,11 +286,12 @@ const Valorant = () => {
                     18th January
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-time"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -274,11 +307,12 @@ const Valorant = () => {
                     10:00 AM to 12:00 PM
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-location"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -296,69 +330,11 @@ const Valorant = () => {
               </div>
             </div>
           </div>
-
-          <div className="w-[100vw] h-[450px] absolute valorantbanneroverlay top-[28rem] -z-1"></div>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-[40px] items-center max-w-[950px] mx-auto mt-[3rem] mb-20">
-        <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard translate-y-[-1rem] justify-center align-middle">
-          <div className="flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="25"
-              viewBox="0 0 38 38"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M8.61073 0.672852C9.39667 0.672852 10.0338 1.30998 10.0338 2.09593V4.94208H27.1107V2.09593C27.1107 1.30998 27.7479 0.672852 28.5338 0.672852C29.3197 0.672852 29.9569 1.30998 29.9569 2.09593V4.94208H31.38C34.5237 4.94208 37.0723 7.49062 37.0723 10.6344V31.9805C37.0723 35.1243 34.5237 37.6729 31.38 37.6729H5.76457C2.6208 37.6729 0.0722656 35.1243 0.0722656 31.9805V10.6344C0.0722656 7.49062 2.6208 4.94208 5.76457 4.94208H7.18765V2.09593C7.18765 1.30998 7.82478 0.672852 8.61073 0.672852ZM34.2261 17.7498C34.2261 16.1779 32.9518 14.9036 31.38 14.9036H5.76457C4.19269 14.9036 2.91842 16.1779 2.91842 17.7498V31.9805C2.91842 33.5524 4.19269 34.8267 5.76457 34.8267H31.38C32.9518 34.8267 34.2261 33.5524 34.2261 31.9805V17.7498Z"
-                fill="#F3F3F3"
-              />
-            </svg>
-            <div className=" font-readex text-[#F3F3F3]">18th January</div>
-          </div>
-          <div className="flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="25"
-              viewBox="0 0 38 38"
-              fill="none"
-            >
-              <path
-                d="M19.0605 9.92285V19.1729H25.998M32.9355 19.1729C32.9355 26.8358 26.7235 33.0478 19.0605 33.0478C11.3976 33.0478 5.18555 26.8358 5.18555 19.1729C5.18555 11.5099 11.3976 5.29785 19.0605 5.29785C26.7235 5.29785 32.9355 11.5099 32.9355 19.1729Z"
-                stroke="#F3F3F3"
-                stroke-width="2.47513"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <div className=" font-readex text-[#F3F3F3]">
-              10:00 AM to 12:00 PM
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="25"
-              viewBox="0 0 38 38"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M17.8383 35.1307C17.8849 35.1577 17.9215 35.1785 17.9474 35.1931L17.9904 35.2171C18.334 35.4057 18.7602 35.4043 19.1041 35.2177L19.1483 35.1931C19.1742 35.1785 19.2108 35.1577 19.2574 35.1307C19.3505 35.0768 19.4836 34.9981 19.6509 34.895C19.9854 34.6891 20.4576 34.3854 21.0216 33.9869C22.1478 33.1914 23.6504 32.011 25.1563 30.4692C28.1535 27.4005 31.2666 22.7898 31.2666 16.8603C31.2666 9.83598 25.5722 4.1416 18.5479 4.1416C11.5235 4.1416 5.8291 9.83598 5.8291 16.8603C5.8291 22.7898 8.94222 27.4005 11.9394 30.4692C13.4453 32.011 14.9479 33.1914 16.0741 33.9869C16.6381 34.3854 17.1103 34.6891 17.4448 34.895C17.6121 34.9981 17.7452 35.0768 17.8383 35.1307ZM18.5479 21.4853C21.1022 21.4853 23.1728 19.4147 23.1728 16.8604C23.1728 14.306 21.1022 12.2354 18.5479 12.2354C15.9935 12.2354 13.9229 14.306 13.9229 16.8604C13.9229 19.4147 15.9935 21.4853 18.5479 21.4853Z"
-                fill="#F3F3F3"
-              />
-            </svg>
-            <div className=" font-readex text-[#F3F3F3]">CS Lab,4th Floor</div>
-          </div>
-        </div>
+      <div className="flex flex-col justify-center gap-[40px] items-center max-w-[950px] mx-auto lg:mt-40 mb-20">
 
-        <div className="text-[21px] font-inter text-center text-[#D4D4D4] tracking-[1.15px] font-medium z-10">
+        <div className="text-[21px] font-inter text-center text-[#D4D4D4] tracking-[1.15px] font-medium z-10 m-bgmi-desc">
           Valorant LAN tournament is a competitive event featuring some of the
           best teams competing against each other in the popular first-person
           shooter game, Valorant. The tournament will be played in a LAN (Local
@@ -370,8 +346,8 @@ const Valorant = () => {
           will add an extra layer of excitement and pressure.
         </div>
 
-        <div className="valorantmapselection w-[950px]">
-          <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center">
+        <div className="valorantmapselection w-[950px] m-mapselection">
+          <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center m-map-rules">
             <div className="font-medium">
               Map Selection Process for Best-of-One Matches:
             </div>
@@ -390,11 +366,11 @@ const Valorant = () => {
             </ul>
           </div>
         </div>
-        <div className="valorantnote text-[#D05555] text-center text-[20px] font-inter italic font-medium tracking-[1.15px]">
+        <div className="valorantnote text-[#D05555] text-center text-[20px] font-inter italic font-medium tracking-[1.15px] m-note">
           *NOTE: Any sort of damage to the property of Ziegers and the concerned
           authorities will not be tolerated and the one's responsible will be
           sanctioned with penalties and can also be charged a fine depending on
-          the damage done.
+          the damage done.
         </div>
       </div>
     </div>

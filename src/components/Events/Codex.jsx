@@ -1,5 +1,7 @@
+
 import React from "react";
 import banner from "../../assets/codexbanner.svg";
+import mobilebanner from "../../assets/m-codexbanner.png";
 import transition from "../../transition";
 // import codecraft from '../../assets/codecraft.png';
 // import designsprint from '../../assets/designsprint.png';
@@ -95,7 +97,7 @@ const Codex = () => {
       </nav>
       <div className="font-varino">
         <div className="">
-          <div className="flex justify-end relative z-10 ">
+          <div className="lg:flex justify-end relative z-10 hidden">
             <svg
               width="300"
               height="341"
@@ -198,8 +200,8 @@ const Codex = () => {
           <div className="relative flex justify-center">
             <div className="flex justify-center codex-btn cursor-pointer absolute z-10 mx-auto bottom-32">
               <div className="flex justify-center">
-                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#6C0FE4] rounded-[100px]">
-                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit']">
+                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#6C0FE4] rounded-[100px] m-codex-btn">
+                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
                     Participate
                   </div>
                   <div>
@@ -209,7 +211,7 @@ const Codex = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      className="flex ml-[9.5rem]"
+                      className="flex ml-[9.5rem] m-arrow"
                     >
                       <path
                         d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
@@ -232,14 +234,16 @@ const Codex = () => {
                 </div>
               </div>
             </div>
-            <img src={banner} alt="webdevbanner" className="w-screen"></img>
+            <img src={banner} alt="webdevbanner" className="w-screen m-hide"></img>
+            <img src={mobilebanner} alt="webdevbanner" className="w-screen lg:hidden"></img>
             <div className=" absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center">
-              <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle">
-                <div className="flex items-center gap-2">
+            <div className=" inline-flex lg:p-[25px] items-center lg:gap-5 lg:rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle m-venue-box">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-calender"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -251,14 +255,15 @@ const Codex = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    19th January
+                    18th January
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-time"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -274,11 +279,12 @@ const Codex = () => {
                     10:00 AM to 12:00 PM
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-location"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -298,63 +304,63 @@ const Codex = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-[1300px] mt-40 flex flex-col justify-center items-center mx-auto gap-16">
-        <div className="text-center text-[#D6D6D6E5] font-readex text-[32px] font-medium w-[1000px]">
+      <div className="max-w-[1300px] lg:mt-40 flex flex-col justify-center items-center mx-auto gap-16 mb-20">
+        <div className="text-center text-[#D6D6D6E5] font-readex text-[32px] font-medium w-[1000px] m-codex-desc">
           Get ready for Codex, where the realm of code transforms into a
           battleground of wit and skill!
         </div>
-        <section className="flex flex-col justify-center items-center gap-10 max-w-[1300px] mt-[4rem]">
+        <section className="flex flex-col justify-center items-center gap-10 max-w-[1300px] lg:mt-[4rem]">
           <div className="flex flex-row justify-center gap-10 items-center flex-wrap">
-            <div className="codexrounds text-center font-varino text-[70px] font-[700]">
+            <div className="codexrounds text-center font-varino text-[70px] font-[700] m-codex-round">
               ROUND 1
             </div>
-            <div className="w-[600px] text-[#EEE] text-[20px] font-readex">
+            <div className="w-[600px] text-[#EEE] text-[20px] font-readex m-codex-rules">
               Conquer MCQ questions that test not just your theoretical
               knowledge but the very essence of coding brilliance.
             </div>
           </div>
           <div className="flex flex-row justify-center gap-10 items-center flex-wrap">
-            <div className="codexrounds text-center font-varino text-[70px] font-[700]">
+            <div className="codexrounds text-center font-varino text-[70px] font-[700] m-codex-round">
               ROUND 2
             </div>
-            <div className="w-[600px] text-[#EEE] text-[20px] font-readex">
+            <div className="w-[600px] text-[#EEE] text-[20px] font-readex m-codex-rules">
               Adds a touch of mystery – engage in a guessing game and unravel
               the enigmatic outputs.
             </div>
           </div>
           <div className="flex flex-row justify-center gap-10 items-center flex-wrap">
-            <div className="codexrounds text-center font-varino text-[70px] font-[700]">
+            <div className="codexrounds text-center font-varino text-[70px] font-[700] m-codex-round">
               ROUND 3
             </div>
-            <div className="w-[600px] text-[#EEE] text-[20px] font-readex">
+            <div className="w-[600px] text-[#EEE] text-[20px] font-readex m-codex-rules">
               Turns you into a coding detective, as you debug your way through
               challenging questions, proving that every bug has its solution.
             </div>
           </div>
           <div className="flex flex-row justify-center gap-10 items-center flex-wrap">
-            <div className="codexrounds text-center font-varino text-[70px] font-[700]">
+            <div className="codexrounds text-center font-varino text-[70px] font-[700] m-codex-round">
               ROUND 4
             </div>
-            <div className="w-[600px] text-[#EEE] text-[20px] font-readex">
+            <div className="w-[600px] text-[#EEE] text-[20px] font-readex m-codex-rules">
               Transforms syntax into a puzzle; rearrange the lines of code to
               unlock the true power of programming.
             </div>
           </div>
           <div className="flex flex-row justify-center gap-10 items-center flex-wrap">
-            <div className="codexrounds text-center font-varino text-[70px] font-[700]">
+            <div className="codexrounds text-center font-varino text-[70px] font-[700] m-codex-round">
               ROUND 5
             </div>
-            <div className="w-[600px] text-[#EEE] text-[20px] font-readex">
+            <div className="w-[600px] text-[#EEE] text-[20px] font-readex m-codex-rules">
               Unleash your coding prowess to solve challenges and stake your
               claim as the ultimate coding champion!
             </div>
           </div>
         </section>
-        <div className="font-varino text-[90px] tracking-[4.9px] text-center valorantrules font-semibold">
+        <div className="font-varino text-[90px] tracking-[4.9px] text-center valorantrules font-semibold m-rule-text">
           RULES
         </div>
-        <div className="valorantmapselection w-[950px]">
-          <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center">
+        <div className="valorantmapselection w-[950px] m-mapselection">
+          <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center m-map-rules">
             <ul
               className="flex flex-col gap-3 items-start text-start max-w-[650px] mx-auto p-5"
               style={{ listStyleType: "disc" }}

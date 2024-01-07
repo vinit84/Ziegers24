@@ -93,7 +93,7 @@ const Eventpage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="wrapper">
       {showNavbar && <Navbar />}
 
       <div className="flex flex-row justify-center relative">

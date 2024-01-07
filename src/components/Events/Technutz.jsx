@@ -1,5 +1,6 @@
 import React from "react";
 import banner from "../../assets/technutzbanner.svg";
+import mobilebanner from "../../assets/m-technutzbanner.png";
 import transition from "../../transition.js";
 // import codecraft from '../../assets/codecraft.png';
 // import designsprint from '../../assets/designsprint.png';
@@ -95,7 +96,7 @@ const Technutz = () => {
       </nav>
       <div className="font-varino">
         <div className="">
-          <div className="flex justify-end relative z-10 ">
+          <div className="lg:flex justify-end relative z-10 hidden ">
             <svg
               width="300"
               height="341"
@@ -198,8 +199,8 @@ const Technutz = () => {
           <div className="relative flex justify-center">
             <div className="flex justify-center technutz-btn cursor-pointer absolute z-10 mx-auto bottom-32">
               <div className="flex justify-center">
-                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#FA00FF] rounded-[100px]">
-                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit']">
+                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#FA00FF] rounded-[100px] m-technutz-btn">
+                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
                     Participate
                   </div>
                   <div>
@@ -209,7 +210,7 @@ const Technutz = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      className="flex ml-[9.5rem]"
+                      className="flex ml-[9.5rem] m-arrow"
                     >
                       <path
                         d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
@@ -232,14 +233,16 @@ const Technutz = () => {
                 </div>
               </div>
             </div>
-            <img src={banner} alt="webdevbanner" className="w-screen"></img>
+            <img src={banner} alt="webdevbanner" className="w-screen m-hide"></img>
+            <img src={mobilebanner} alt="webdevbanner" className="w-screen lg:hidden"></img>
             <div className=" absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center">
-              <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle">
-                <div className="flex items-center gap-2">
+            <div className=" inline-flex lg:p-[25px] items-center lg:gap-5 lg:rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle m-venue-box">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-calender"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -251,14 +254,15 @@ const Technutz = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    19th January
+                    18th January
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-time"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -274,11 +278,12 @@ const Technutz = () => {
                     10:00 AM to 12:00 PM
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-location"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -298,24 +303,24 @@ const Technutz = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-[1300px] mt-40 mb-20 flex flex-col justify-center items-center mx-auto gap-16">
-        <div className="text-center text-[#D6D6D6E5] font-readex text-[23px] font-medium w-[1000px]">
+      <div className="max-w-[1300px] lg:mt-40 mb-20 flex flex-col justify-center items-center mx-auto gap-10">
+        <div className="text-center text-[#D6D6D6E5] font-readex text-[23px] font-medium w-[1000px] m-technutz-desc">
           Technutz is a fun event where you can play different games without
           coding. You can join alone or with friends and compete or relax. Come
           and enjoy Technutz with us!!
         </div>
-        <div className="font-varino text-[90px] tracking-[4.9px] text-center valorantrules font-semibold">
+        <div className="font-varino text-[90px] tracking-[4.9px] text-center valorantrules font-semibold m-rule-text">
           OVERVIEW
         </div>
         <section className="w-[1000px] flex flex-col items-center gap-6">
-          <div className="font-inter text-[23px] text-white text-center tracking-[0.5px]">
+          <div className="font-inter text-[23px] text-white text-center tracking-[0.5px] m-technutz-overview">
             Technutz is an event with four rounds of fun and simple games. To
             join, you need to register and pay a fee that is not refundable or
             transferable. You also need to be healthy, respectful, and follow
             the rules of each round. The hosts and referees will explain the
             rules and judge the games.
           </div>
-          <div className="font-inter text-[23px] text-white text-center tracking-[0.5px]">
+          <div className="font-inter text-[23px] text-white text-center tracking-[0.5px] m-technutz-overview">
             It is mandatory for every participant to adhere to the rules and
             regulations of the event. The regulations won't be repeated if you
             don't comply, and you risk being disqualified. To guarantee that
