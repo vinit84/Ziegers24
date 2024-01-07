@@ -1,5 +1,7 @@
+
 import React from "react";
-import banner from "../../assets/webdevbanner.svg";
+import banner from "../../assets/webdevbanner.jpg";
+import mobilebanner from "../../assets/m-webdevbanner.png";
 import codecraft from "../../assets/codecraft.png";
 import designsprint from "../../assets/designsprint.png";
 
@@ -94,7 +96,7 @@ const Webdev = () => {
       </nav>
       <div className="font-varino">
         <div className="">
-          <div className="flex justify-end relative z-10 ">
+          <div className="lg:flex justify-end relative z-10 hidden ">
             <svg
               width="300"
               height="341"
@@ -197,8 +199,8 @@ const Webdev = () => {
           <div className="relative flex justify-center">
             <div className="flex justify-center webdev-btn cursor-pointer absolute z-10 mx-auto bottom-[7.2rem]">
               <div className="flex justify-center">
-                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#246DB6] rounded-[100px]">
-                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit']">
+                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#246DB6] rounded-[100px] m-webdev-btn">
+                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
                     Participate
                   </div>
                   <div>
@@ -208,7 +210,7 @@ const Webdev = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      className="flex ml-[9.5rem]"
+                      className="flex ml-[9.5rem] m-arrow"
                     >
                       <path
                         d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
@@ -231,14 +233,16 @@ const Webdev = () => {
                 </div>
               </div>
             </div>
-            <img src={banner} alt="webdevbanner" className="w-screen"></img>
+            <img src={banner} alt="webdevbanner" className="w-screen m-hide"></img>
+            <img src={mobilebanner} alt="webdevbanner" className="w-screen lg:hidden"></img>
             <div className=" absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center">
-              <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard mt-[13rem] justify-center align-middle">
-                <div className="flex items-center gap-2">
+            <div className=" inline-flex lg:p-[25px] items-center lg:gap-5 lg:rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle m-venue-box">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-calender"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -250,14 +254,15 @@ const Webdev = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    19th January
+                    18th January
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-time"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -273,11 +278,12 @@ const Webdev = () => {
                     10:00 AM to 12:00 PM
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center lg:gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="25"
+                    className="m-venue-location"
                     viewBox="0 0 38 38"
                     fill="none"
                   >
@@ -297,27 +303,27 @@ const Webdev = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-[1300px] mt-[9rem] mb-20 flex flex-col justify-center items-center mx-auto gap-24 z-10">
-        <div className="text-center text-[#D6D6D6E5] font-readex text-[18px] font-medium w-[800px]">
+      <div className="max-w-[1300px] lg:mt-[9rem] mb-20 flex flex-col justify-center items-center mx-auto gap-24 z-10">
+        <div className="text-center text-[#D6D6D6E5] font-readex text-[18px] font-medium w-[800px] m-webdev-desc">
           Join us for an exciting web development competition on the 18th of
           January 2024, where participants will showcase their skills in either
           website development using their preferred framework or the
           fundamentals of HTML and CSS. This single-round event offers a unique
           challenge for both developers and wireframe designers
         </div>
-        <div className="flex flex-row justify-center items-center gap-[100px]">
+        <div className="flex flex-row justify-center items-center gap-[100px] flex-wrap-reverse m-codecraft">
           <img
             src={codecraft}
             alt="codedraft"
-            className="w-[600px] h-[350px] rounded-[80px] "
+            className="w-[600px] h-[350px] rounded-[80px] m-codecraft-img"
           />
           <div className="flex flex-col items-stretch justify-center w-[400px] gap-8">
-            <div className="text-[#EEE] font-inter text-center text-[35px] font-[700]">
+            <div className="text-[#EEE] font-inter text-center text-[35px] font-[700] mx-auto m-codecraft-heading">
               CodeCraft
             </div>
             <div>
               <ul
-                className="flex flex-col items-center gap-5 text-[#EEE] text-[16px] font-medium"
+                className="flex flex-col items-center gap-5 text-[#EEE] text-[16px] font-medium m-codecraft-text"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -333,14 +339,14 @@ const Webdev = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-center items-center gap-[100px]">
+        <div className="flex flex-row justify-center items-center gap-[100px] flex-wrap m-designsprint">
           <div className="flex flex-col items-stretch justify-center w-[400px] gap-8">
-            <div className="text-[#EEE] font-inter text-center text-[35px] font-[700]">
+            <div className="text-[#EEE] font-inter text-center text-[35px] font-[700] m-designsprint-heading">
               DesignSprint
             </div>
             <div>
               <ul
-                className="flex flex-col items-center gap-5 text-[#EEE] text-[16px] font-medium"
+                className="flex flex-col items-center gap-5 text-[#EEE] text-[16px] font-medium m-designsprint-text"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -358,19 +364,20 @@ const Webdev = () => {
           <img
             src={designsprint}
             alt="designsprint"
-            className="w-[600px] h-[350px] rounded-[80px] "
+            className="w-[600px] h-[350px] rounded-[80px] m-designsprint-img"
           />
         </div>
-        <div className="font-varino text-[75px] webdevhighlights text-center font-semibold">
+        <div className="font-varino text-[75px] webdevhighlights text-center font-semibold m-rule-text">
           EVENT HIGHLIGHTS
         </div>
-        <div className="flex flex-row justify-center gap-8">
-          <div className="h-[350px] w-[330px] flex flex-col items-start justify-center gap-5 p-[0_50px] rounded-[40px] webdevhighlighcards">
+        <div className="flex flex-row justify-center gap-8 flex-wrap">
+          <div className="h-[350px] w-[330px] flex flex-col items-start justify-center gap-5 p-[0_50px] rounded-[40px] webdevhighlighcards m-webdevhighlighcards">
             <div className="flex flex-col items-start gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="65"
                 height="65"
+                className="m-event-icons"
                 viewBox="0 0 81 81"
                 fill="none"
               >
@@ -382,21 +389,22 @@ const Webdev = () => {
                   stroke-linejoin="round"
                 />
               </svg>
-              <div className="text-white font-inter text-[26px] font-[700]">
+              <div className="text-white font-inter text-[26px] font-[700] m-event-heading">
                 Skill Showcase
               </div>
             </div>
-            <div className="text-[#A3A3A3] font-inter text-[18px]">
+            <div className="text-[#A3A3A3] font-inter text-[18px] m-event-detail">
               Participants will demonstrate their web development or wireframing
               expertise in a competitive environment.
             </div>
           </div>
-          <div className="h-[350px] w-[330px] flex flex-col items-start justify-center gap-5 p-[0_50px] rounded-[40px] webdevhighlighcards">
+          <div className="h-[350px] w-[330px] flex flex-col items-start justify-center gap-5 p-[0_50px] rounded-[40px] webdevhighlighcards m-webdevhighlighcards">
             <div className="flex flex-col items-start gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="65"
                 height="65"
+                className="m-event-icons"
                 viewBox="0 0 81 81"
                 fill="none"
               >
@@ -408,21 +416,22 @@ const Webdev = () => {
                   stroke-linejoin="round"
                 />
               </svg>
-              <div className="text-white font-inter text-[26px] font-[700]">
+              <div className="text-white font-inter text-[26px] font-[700] m-event-heading">
                 Time constraints
               </div>
             </div>
-            <div className="text-[#A3A3A3] font-inter text-[18px]">
+            <div className="text-[#A3A3A3] font-inter text-[18px] m-event-detail">
               The challenge adds an element of urgency, pushing participants to
               think on their feet and deliver within a limited time frame.
             </div>
           </div>
-          <div className="h-[350px] w-[330px] flex flex-col items-start justify-center gap-5 p-[0_50px] rounded-[40px] webdevhighlighcards">
+          <div className="h-[350px] w-[330px] flex flex-col items-start justify-center gap-5 p-[0_50px] rounded-[40px] webdevhighlighcards m-webdevhighlighcards">
             <div className="flex flex-col items-start gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="65"
                 height="65"
+                className="m-event-icons"
                 viewBox="0 0 81 81"
                 fill="none"
               >
@@ -441,11 +450,11 @@ const Webdev = () => {
                   stroke-linejoin="round"
                 />
               </svg>
-              <div className="text-white font-inter text-[26px] font-[700]">
+              <div className="text-white font-inter text-[26px] font-[700] m-event-heading">
                 Diverse Categories
               </div>
             </div>
-            <div className="text-[#A3A3A3] font-inter text-[18px]">
+            <div className="text-[#A3A3A3] font-inter text-[18px] m-event-detail">
               Whether you're into coding or design, there's a category tailored
               to your skills and interests.
             </div>

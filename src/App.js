@@ -15,6 +15,7 @@ import Webdev from './components/Events/Webdev';
 import Codex from './components/Events/Codex';
 import Gaming from './components/Events/Gaming';
 import Technutz from './components/Events/Technutz';
+import Contact from './components/Contact';
 // import LocomotiveScrollComponent from './components/LocomotiveScrollComponent';
 
 
@@ -31,6 +32,7 @@ function App() {
     <AnimatePresence mode='wait'>
     <Routes location={location} key={location.pathname}>
       <Route path="/*" element={<Home/>}/>
+      <Route path="/contact" element={<Contact/>}/>
       <Route path="/events" element={<Eventpage/>} />
       <Route path="/events/gaming" element={<Gaming/>} />
       <Route path="/events/gaming/valorant" element={<Valorant/>} />

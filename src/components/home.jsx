@@ -5,7 +5,10 @@ import sphere1 from "../../src/assets/planet.png";
 import sphere2 from "../../src/assets/planet2.svg";
 import sphere3 from "../../src/assets/planet3.svg";
 import { useNavigate } from "react-router-dom";
-// import transition from "../transition";
+import OutsideClickHandler from "react-outside-click-handler";
+import menu from "../assets/menu.svg";
+import { useState } from "react";
+import transition from "../transition";
 
 function Home() {
   const navigate = useNavigate();
@@ -13,43 +16,57 @@ function Home() {
   const handleRegisterClick = () => {
     navigate("/events");
   };
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
+  // const handleAboutClick = () => {
+  //   navigate("/about");
+  // };
+
+  const [menuOpened, setMenuOpened] = useState(false);
+  const getMenuStyles = (menuOpened) => {
+    if (document.documentElement.clientWidth <= 800) {
+      return { right: !menuOpened && "-100%" };
+    }
+  };
 
   return (
-    <div className="wrapper relative overflow-hidden font-varino">
-      <div className="bgstyle"></div>
-      <img
-        src={stars}
-        alt="stars"
-        className="absolute h-[40rem] w-[90rem] top-[8rem] left-[7rem] stars"
-      ></img>
-      <nav className="flex justify-center align-center">
-        <div className="w-screen max-w-[1400px] mx-auto flex items-center justify-between absolute top-1 z-10">
-          <ul className="flex justify-center  ">
-            <li className="text-white py-7 cursor-pointer">
+    <div className="wrapper overflow-hidden font-varino">
+      <nav className="z-10 absolute mx-auto w-screen justify-center">
+        <div className="font-medium mb-10">
+          <div className="mx-auto flex flex-row p-5 font-medium title font-varino">
+            <div className="text-white cursor-pointer flex justify-center align-middle items-center text-center ">
               <a
                 href="h"
-                className=" text-[20px] ml-[3.5rem] leading-[24px] uppercase text-flicker-in-glow"
+                className=" text-[20px] text-center lg:ml-[3.5rem] m-logotext  mx-auto leading-[24px] uppercase text-flicker-in-glow"
               >
                 Ziegers
               </a>
-            </li>
-          </ul>
-          <div className="ml-[3.8rem]">
-            <ul className="lg:flex gap-3 items-center hidden">
-              <li className="text-white py-7 cursor-pointer relative group">
-                <div className="flex justify-center items-center">
-                  <a
-                    href="h"
-                    className="text-center font-varino text-[12px] font-normal leading-[18px] text-[#111] uppercase"
+            </div>
+            <OutsideClickHandler
+              onOutsideClick={() => {
+                setMenuOpened(false);
+              }}
+            >
+             
+              <div
+                className="flex flex-row justify-center mt-3 align-middle  items-center lg:w-[60rem] text-[15px] h-menus z-50"
+                style={getMenuStyles(menuOpened)}
+              >
+                <div className="flex lg:ml-[3rem] justify-center items-center m-menu ">
+                  <div
+                  onClick={handleContactClick}
+                    className="text-center cursor-pointer font-varino text-[12px] font-normal leading-[18px] text-[#111] uppercase navbar-text"
                   >
                     Contact
-                  </a>
+                  </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="34"
                     height="28"
                     viewBox="10 1 34 34"
                     fill="none"
+                    className="m-hide"
                   >
                     <path
                       d="M21.2133 18.3848V12.728M21.2133 12.728H15.5565M21.2133 12.728L12.728 21.2133"
@@ -59,15 +76,11 @@ function Home() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </div>
-              </li>
-              <li className="text-white py-7 cursor-pointer relative group">
-                <div className="flex justify-center items-center">
                   <a
                     href="h"
-                    className="text-center font-varino text-[12px] font-normal leading-[18px] text-[#111] uppercase"
+                    className="text-center font-varino text-[12px] font-normal leading-[18px] text-[#111] uppercase navbar-text"
                   >
-                    About us
+                    About Us
                   </a>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +88,7 @@ function Home() {
                     height="28"
                     viewBox="10 1 34 34"
                     fill="none"
+                    className="m-hide"
                   >
                     <path
                       d="M21.2133 18.3848V12.728M21.2133 12.728H15.5565M21.2133 12.728L12.728 21.2133"
@@ -85,13 +99,12 @@ function Home() {
                     />
                   </svg>
                 </div>
-              </li>
-            </ul>
-          </div>
-          <div className="flex items-center">
+              </div>
+            </OutsideClickHandler>
+
             <a
               href="h"
-              className="w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[3rem] bg-gradient-to-r from-zinc-950 to-blue-900 rounded-full shadow border border-blue-900 justify-start items-center inline-flex instagram-button"
+              className="w-[150px] m-hide h-[47px] pl-[3px] pr-[13px] mr-[3rem] bg-gradient-to-r from-zinc-950 to-blue-900 rounded-full shadow border border-blue-900 justify-start items-center inline-flex instagram-button"
             >
               <div className="w-4 h-4 relative flex-col justify-start items-start flex " />
               <div className="text-center text-slate-50 text-xs font-normal font-['Varino'] flex flex-row justify-center items-center align-middle">
@@ -114,30 +127,41 @@ function Home() {
               </div>
             </a>
 
-            <div className=" w-[18px] flex flex-col gap-1 lg:hidden ">
-              <div className=" bg-white w-full h-[1.2px] "></div>
-              <div className=" bg-white w-full h-[1.2px] "></div>
-              <div className=" bg-white w-full h-[1.2px] "></div>
+          
+            <div
+              className="flex menu-icon cursor-pointer flex-row  justify-end mx-auto "
+              onClick={() => setMenuOpened((prev) => !prev)}
+            >
+              <img src={menu} alt="menu" width="50px" className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg"></img>
             </div>
           </div>
         </div>
       </nav>
+      <div className="bgstyle"></div>
+
+      <img
+        src={stars}
+        alt="stars"
+        className="absolute h-[40rem] w-[90rem] top-[8rem] left-[7rem] stars"
+      ></img>
+     
+
       <div className="flex justify-center">
         <img
           src={stroke}
           alt="Strokes"
           className="w-[45%] h-[75%] absolute top-0 mt-20 strokes"
         ></img>
-        <div className="flex flex-col gap-3 absolute z-10 items-center top-[17%] h-[440px] w-[650px] mx-auto overflow-hidden hero-section">
+        <div className="flex flex-col lg:gap-3 absolute items-center top-[17%] h-[500px] w-[650px] mx-auto overflow-hidden hero-section">
           <img
             src={logo}
             alt="Hello"
-            className="h-[143px] w-[150px] translate-y-5"
+            className="h-[143px] w-[150px] translate-y-5 m-logo"
           ></img>
-          <p className="text-black ziegers font-semibold text-[50px] leading-[65px] font-varino max-w-[850px] text-center mt-[10px] ziegers2024">
+          <p className="text-black ziegers font-semibold text-[50px] leading-[65px] font-varino max-w-[850px] text-center lg:mt-[10px] ziegers2024">
             ZIEGERS 2024
           </p>
-          <p className="mt-3 text-center text-[#080808] font-inter text-[20px] leading-[25px] ziegers-text ">
+          <p className="lg:mt-3 text-center text-[#080808] font-readex font-light text-[20px] leading-[25px] ziegers-text ">
             Ziegers enables participants to discover <br /> connections that was
             not possible before.
           </p>
@@ -200,4 +224,4 @@ function Home() {
     </div>
   );
 }
-export default Home;
+export default transition(Home);
