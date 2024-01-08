@@ -5,6 +5,9 @@ import transition from "../../transition";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Footer from "../Footer";
+import { redirectToGamingForm } from "../redirect";
 
 const Granturismo = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -13,69 +16,83 @@ const Granturismo = () => {
       return { right: !menuOpened && "-100%" };
     }
   };
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
+  const handleAboutclick = () => {
+    navigate("/about");
+  };
   return (
-    <section className="bg-[#0A0A0B] overflow-x-hidden">
+    <section className="bg-[#0A0A0B] overflow-x-hidden wrapper ">
       <nav
         className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between bg-[#000000CC] rounded-es-[100px] rounded-br-[100px] bg-opacity-80 absolute m-gaming-nav"
         style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
       >
         <OutsideClickHandler
-        onOutsideClick={() => {
-          setMenuOpened(false);
-        }}
-      >
-        <div className="flex flex-row justify-evenly items-center align-middle h-menus lg:mb-[1rem]  ml-[3rem]"  style={getMenuStyles(menuOpened)}>
-          <a
-            href="h"
-            className="flex justify-center items-center align-middle font-varino text-focus-in navbar-text"
+          onOutsideClick={() => {
+            setMenuOpened(false);
+          }}
+        >
+          <div
+            className="flex flex-row justify-evenly items-center align-middle h-menus lg:mb-[1rem]  ml-[3rem]"
+            style={getMenuStyles(menuOpened)}
           >
-            Contact
-          </a>
-          <svg
-            width="34"
-            height="34"
-            viewBox="0 0 34 34"
-            fill="none"
-            className="text-focus-in m-hide"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Huge-icon/arrows/outline/arrow-down">
-              <path
-                id="Vector 190"
-                d="M21.2722 18.4141V12.7573M21.2722 12.7573H15.6153M21.2722 12.7573L12.7869 21.2425"
-                stroke="#F3F3F3"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-          </svg>
-          <a href="h" className="font-varino ml-3 text-focus-i navbar-text">
-            About
-          </a>
-          <svg
-            width="34"
-            height="34"
-            className="text-focus-in m-hide"
-            viewBox="0 0 34 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Huge-icon/arrows/outline/arrow-down">
-              <path
-                id="Vector 190"
-                d="M21.2722 18.4141V12.7573M21.2722 12.7573H15.6153M21.2722 12.7573L12.7869 21.2425"
-                stroke="#F3F3F3"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-          </svg>
-        </div>
+            <div
+              onClick={handleContactClick}
+              className="flex justify-center cursor-pointer items-center align-middle font-varino text-focus-in navbar-text"
+            >
+              Contact
+            </div>
+            <svg
+              width="34"
+              height="34"
+              viewBox="0 0 34 34"
+              fill="none"
+              className="text-focus-in m-hide"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Huge-icon/arrows/outline/arrow-down">
+                <path
+                  id="Vector 190"
+                  d="M21.2722 18.4141V12.7573M21.2722 12.7573H15.6153M21.2722 12.7573L12.7869 21.2425"
+                  stroke="#F3F3F3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+            <div
+              onClick={handleAboutclick}
+              className=" cursor-pointer font-varino ml-3 text-focus-in navbar-text"
+            >
+              About
+            </div>
+            <svg
+              width="34"
+              height="34"
+              className="text-focus-in m-hide"
+              viewBox="0 0 34 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Huge-icon/arrows/outline/arrow-down">
+                <path
+                  id="Vector 190"
+                  d="M21.2722 18.4141V12.7573M21.2722 12.7573H15.6153M21.2722 12.7573L12.7869 21.2425"
+                  stroke="#F3F3F3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </div>
         </OutsideClickHandler>
         <a
-          href="/"
+          href="https://www.instagram.com/ziegerscs"
+          target="_blank"
           className="font-varino font-bold mx-auto text-xl translate-x-[-2.7rem] lg:mb-[1rem] text-focus-in logo-text"
           style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.8)" }}
         >
@@ -107,16 +124,16 @@ const Granturismo = () => {
           </div>
         </a>
         <div
-        className="flex menu-icon cursor-pointer flex-row  justify-end mx-auto m-game-menu"
-        onClick={() => setMenuOpened((prev) => !prev)}
-      >
-        <img
-          src={menu}
-          alt="menu"
-          width="50px"
-          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2"
-        ></img>
-      </div>
+          className="flex menu-icon cursor-pointer flex-row  justify-end mx-auto m-game-menu"
+          onClick={() => setMenuOpened((prev) => !prev)}
+        >
+          <img
+            src={menu}
+            alt="menu"
+            width="50px"
+            className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2 text-focus-in"
+          ></img>
+        </div>
       </nav>
       <div className="font-varino">
         <div>
@@ -178,7 +195,7 @@ const Granturismo = () => {
                 <br />
                 Amount
                 <div className="text-slate-400 text-[13px] font-medium mt-[1rem]">
-                  Check in 15:00
+                  Prize : Certificate
                 </div>
                 <div className="text-slate-400 text-[13px] font-medium">
                   No refund
@@ -214,163 +231,21 @@ const Granturismo = () => {
                     </div>
                   </div>
                   <div className="left-[30px] top-[30px] absolute text-white text-[20px] font-semibold">
-                    ₹200/Team
+                    ₹50/Person
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* <div className="flex mx-auto justify-center items-center">
-            <div className="flex justify-center items-center gt7-btn cursor-pointer absolute z-10 mx-auto bottom-[4rem]">
-              <div className="flex justify-center">
-                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#D60000] rounded-[100px] m-gt7-btn">
-                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
-                    Participate
-                  </div>
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="21"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="flex ml-[9.5rem] m-arrow"
-                    >
-                      <path
-                        d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
-                        stroke="#fff"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M3.5 12H20.33"
-                        stroke="#fff"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <img
-            src={banner}
-            alt="gt7banner"
-            className="flex w-screen"
-          ></img>
-          <div className="absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center">
-            <div className=" inline-flex p-[25px] items-center gap-5 rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle m-venue-box">
-              <div className="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="25"
-                  className="m-venue-calander"
-                  viewBox="0 0 38 38"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8.61073 0.672852C9.39667 0.672852 10.0338 1.30998 10.0338 2.09593V4.94208H27.1107V2.09593C27.1107 1.30998 27.7479 0.672852 28.5338 0.672852C29.3197 0.672852 29.9569 1.30998 29.9569 2.09593V4.94208H31.38C34.5237 4.94208 37.0723 7.49062 37.0723 10.6344V31.9805C37.0723 35.1243 34.5237 37.6729 31.38 37.6729H5.76457C2.6208 37.6729 0.0722656 35.1243 0.0722656 31.9805V10.6344C0.0722656 7.49062 2.6208 4.94208 5.76457 4.94208H7.18765V2.09593C7.18765 1.30998 7.82478 0.672852 8.61073 0.672852ZM34.2261 17.7498C34.2261 16.1779 32.9518 14.9036 31.38 14.9036H5.76457C4.19269 14.9036 2.91842 16.1779 2.91842 17.7498V31.9805C2.91842 33.5524 4.19269 34.8267 5.76457 34.8267H31.38C32.9518 34.8267 34.2261 33.5524 34.2261 31.9805V17.7498Z"
-                    fill="#F3F3F3"
-                  />
-                </svg>
-                <div className=" font-readex text-[#F3F3F3]">18th January</div>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="25"
-                  className="m-venue-time"
-                  viewBox="0 0 38 38"
-                  fill="none"
-                >
-                  <path
-                    d="M19.0605 9.92285V19.1729H25.998M32.9355 19.1729C32.9355 26.8358 26.7235 33.0478 19.0605 33.0478C11.3976 33.0478 5.18555 26.8358 5.18555 19.1729C5.18555 11.5099 11.3976 5.29785 19.0605 5.29785C26.7235 5.29785 32.9355 11.5099 32.9355 19.1729Z"
-                    stroke="#F3F3F3"
-                    stroke-width="2.47513"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <div className=" font-readex text-[#F3F3F3]">
-                  10:00 AM to 12:00 PM
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="25"
-                  className="m-venue-location"
-                  viewBox="0 0 38 38"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M17.8383 35.1307C17.8849 35.1577 17.9215 35.1785 17.9474 35.1931L17.9904 35.2171C18.334 35.4057 18.7602 35.4043 19.1041 35.2177L19.1483 35.1931C19.1742 35.1785 19.2108 35.1577 19.2574 35.1307C19.3505 35.0768 19.4836 34.9981 19.6509 34.895C19.9854 34.6891 20.4576 34.3854 21.0216 33.9869C22.1478 33.1914 23.6504 32.011 25.1563 30.4692C28.1535 27.4005 31.2666 22.7898 31.2666 16.8603C31.2666 9.83598 25.5722 4.1416 18.5479 4.1416C11.5235 4.1416 5.8291 9.83598 5.8291 16.8603C5.8291 22.7898 8.94222 27.4005 11.9394 30.4692C13.4453 32.011 14.9479 33.1914 16.0741 33.9869C16.6381 34.3854 17.1103 34.6891 17.4448 34.895C17.6121 34.9981 17.7452 35.0768 17.8383 35.1307ZM18.5479 21.4853C21.1022 21.4853 23.1728 19.4147 23.1728 16.8604C23.1728 14.306 21.1022 12.2354 18.5479 12.2354C15.9935 12.2354 13.9229 14.306 13.9229 16.8604C13.9229 19.4147 15.9935 21.4853 18.5479 21.4853Z"
-                    fill="#F3F3F3"
-                  />
-                </svg>
-                <div className=" font-readex text-[#F3F3F3]">
-                  CS Lab,4th Floor
-                </div>
-              </div>
-            </div>
-          </div> */}
           <div className="relative flex justify-center">
-            {/* <div className="flex mx-auto justify-center items-center">
-              <div className="flex justify-center gt7-btn cursor-pointer absolute z-10 mx-auto bottom-[5.5rem]">
-                <div className="flex justify-center">
-                  <div className="w-[235px] h-[65px] text-center flex flex-row items-center bg-[#D60000] rounded-[100px] m-gt7-btn">
-                    <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
-                      Participate
-                    </div>
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className="flex ml-[9.5rem] m-arrow"
-                      >
-                        <path
-                          d="M14.4301 5.92969L20.5001 11.9997L14.4301 18.0697"
-                          stroke="#fff"
-                          stroke-width="1.5"
-                          stroke-miterlimit="10"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M3.5 12H20.33"
-                          stroke="#fff"
-                          stroke-width="1.5"
-                          stroke-miterlimit="10"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             <div className="flex justify-center gt7-btn cursor-pointer absolute z-10 mx-auto bottom-[9.5rem] ">
               <div className="flex justify-center ">
-                <div className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 bg-[#D60000] rounded-[100px] m-gt7-btn ">
-                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
+                <div onClick={redirectToGamingForm} className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 bg-[#D60000] rounded-[100px] m-gt7-btn ">
+                  <div
+                    
+                    className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text"
+                  >
                     Participate
                   </div>
                   <div>
@@ -449,7 +324,7 @@ const Granturismo = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    10:00 AM to 12:00 PM
+                  (TBA) via WhatsApp
                   </div>
                 </div>
                 <div className="flex items-center lg:gap-2">
@@ -568,6 +443,9 @@ const Granturismo = () => {
         authorities will not be tolerated and the one's responsible will be
         sanctioned with penalties and can also be charged a fine depending on
         the damage done.
+      </div>
+      <div className="flex mt-[5rem]">
+        <Footer />
       </div>
     </section>
   );

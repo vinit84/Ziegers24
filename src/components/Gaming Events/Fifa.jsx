@@ -6,6 +6,9 @@ import transition from "../../transition.js";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Footer from "../Footer.jsx";
+import { redirectToGamingForm } from "../redirect.js";
 
 const Fifa = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -13,6 +16,13 @@ const Fifa = () => {
     if (document.documentElement.clientWidth <= 800) {
       return { right: !menuOpened && "-100%" };
     }
+  };
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
+  const handleAboutclick = () => {
+    navigate("/about");
   };
   return (
     <div className="wrapper ">
@@ -26,12 +36,12 @@ const Fifa = () => {
         }}
       >
         <div className="flex flex-row justify-evenly items-center align-middle h-menus lg:mb-[1rem]  ml-[3rem]"  style={getMenuStyles(menuOpened)}>
-          <a
-            href="h"
-            className="flex justify-center items-center align-middle font-varino text-focus-in navbar-text"
+          <div
+          onClick={handleContactClick}
+            className="flex justify-center cursor-pointer items-center align-middle font-varino text-focus-in navbar-text"
           >
             Contact
-          </a>
+          </div>
           <svg
             width="34"
             height="34"
@@ -51,9 +61,9 @@ const Fifa = () => {
               />
             </g>
           </svg>
-          <a href="h" className="font-varino ml-3 text-focus-i navbar-text">
+          <div onClick={handleAboutclick} className="cursor-pointer font-varino ml-3 text-focus-in navbar-text">
             About
-          </a>
+          </div>
           <svg
             width="34"
             height="34"
@@ -76,7 +86,8 @@ const Fifa = () => {
         </div>
         </OutsideClickHandler>
         <a
-          href="/"
+          href="https://www.instagram.com/ziegerscs"
+          target="_blank"
           className="font-varino font-bold mx-auto text-xl translate-x-[-2.7rem] lg:mb-[1rem] text-focus-in logo-text"
           style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.8)" }}
         >
@@ -84,7 +95,8 @@ const Fifa = () => {
         </a>
 
         <a
-          href="h"
+          href="https://www.instagram.com/ziegerscs"
+          target="_blank"
           className="m-hide text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[5rem] bg-[#0080D8] from-zinc-950  rounded-full shadow border border-[#0080D8] justify-start items-center inline-flex instagram-button mb-[0.5rem]"
         >
           <div className="w-4 h-4 relative flex-col justify-start items-start flex " />
@@ -115,7 +127,7 @@ const Fifa = () => {
           src={menu}
           alt="menu"
           width="50px"
-          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2"
+          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2 text-focus-in "
         ></img>
       </div>
       </nav>
@@ -178,8 +190,8 @@ const Fifa = () => {
                 Registration
                 <br />
                 Amount
-                <div className="text-slate-400 text-[13px] font-medium mt-[1rem]">
-                  Check in 15:00
+                <div className="text-slate-400 text-[15px] font-medium mt-[1rem]">
+                Prize Pool ₹700
                 </div>
                 <div className="text-slate-400 text-[13px] font-medium">
                   No refund
@@ -215,7 +227,7 @@ const Fifa = () => {
                     </div>
                   </div>
                   <div className="left-[30px] top-[30px] absolute text-white text-[20px] font-semibold">
-                    ₹100/Team
+                    ₹50/Person
                   </div>
                 </div>
               </div>
@@ -224,8 +236,8 @@ const Fifa = () => {
           <div className="relative flex justify-center">
             <div className="flex justify-center fifa-btn cursor-pointer absolute z-10 mx-auto bottom-[5.5rem]">
               <div className="flex justify-center">
-                <div className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#0080D8] rounded-[100px] m-fifa-btn">
-                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
+                <div onClick={redirectToGamingForm} className="w-[235px] h-[65px] text-center flex flex-row justify-center items-center left-0 top-0 bg-[#0080D8] rounded-[100px] m-fifa-btn">
+                  <div  className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
                     Participate
                   </div>
                   <div>
@@ -300,7 +312,7 @@ const Fifa = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    10:00 AM to 12:00 PM
+                  (TBA) via WhatsApp
                   </div>
                 </div>
                 <div className="flex items-center lg:gap-2">
@@ -371,6 +383,7 @@ const Fifa = () => {
           the damage done.
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

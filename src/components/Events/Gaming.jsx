@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../navbar.jsx";
 import banner from "../../assets/gamingPageBanner.png";
 import mobilebanner from "../../assets/m-gamingbanner.png";
@@ -7,11 +7,14 @@ import codm from "../../assets/codm.png";
 import valorant from "../../assets/valorant.png";
 import fifa2k23 from "../../assets/fifa2k23.png";
 import gt7 from "../../assets/gt7.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import transition from "../../transition.js";
+import Footer from "../Footer.jsx";
+import Gameloader from "../Gameloader.js";
 
 const Gaming = () => {
   const navigate = useNavigate();
+  
 
   const handleValorantCardClick = () => {
     navigate("/events/gaming/valorant");
@@ -29,10 +32,33 @@ const Gaming = () => {
     navigate("/events/gaming/granttruismo7");
   };
 
+  const [loading, setLoading] = useState(true);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = "Ziegers-Gaming";
+    
+    const delay = setTimeout(() => {
+     setIsLoading(false);
+   }, 3000);
+
+   return () => clearTimeout(delay);
+  }, []);
+
+ 
+
+
+
+
   return (
-    <div>
+    <div className="wrapper">
+       {isLoading ? (
+        <Gameloader/>
+      ) : (
+        <>
       <Navbar />
-      <div className="wrapper overflow-x-hidden font-varino">
+      <div className="wrapper overflow-x-hidden font-varino mb-5">
         <div className="relative">
         <img src={banner} alt="gamingBanner" className="m-hide" />
         <img src={mobilebanner} alt="gamingBanner" className="lg:hidden" />
@@ -88,7 +114,7 @@ const Gaming = () => {
             <div className="flex justify-center">
               <div
                 onClick={handleValorantCardClick}
-                className="rounded-[76px] valorantgamingcard valorant m-valorant"
+                className="rounded-[66px] valorantgamingcard valorant m-valorant"
               >
                 <div className=" w-[1150px] h-[400px] text-center flex justify-center cursor-pointer relative m-valorant">
                   <img
@@ -106,7 +132,7 @@ const Gaming = () => {
           <div className="flex flex-row justify-center gap-12 game-card-1">
             <div
               onClick={handleFifaCardClick}
-              className="rounded-[76px] fifagamingcard fifa m-fifa"
+              className="rounded-[66px] fifagamingcard fifa m-fifa"
             >
               <div className="w-[550px] h-[400px] text-center  flex justify-center cursor-pointer  relative grayscale hover:grayscale-0 transition-all duration-[600ms] ease-in-out m-fifa">
                 <div className="overlay m-overlay"></div>
@@ -124,7 +150,7 @@ const Gaming = () => {
             </div>
             <div
               onClick={handleGt7CardClick}
-              className="rounded-[76px] assetocorsagamingcard assetocorsa m-assetocorsa"
+              className="rounded-[66px] assetocorsagamingcard assetocorsa m-assetocorsa"
             >
               <div className="w-[550px] h-[400px] text-center  flex justify-center cursor-pointer  relative grayscale hover:grayscale-0 transition-all duration-500 ease-in-out m-assetocorsa">
                 <div className="overlay m-overlay"></div>
@@ -141,6 +167,12 @@ const Gaming = () => {
           </div>
         </div>
       </div>
+      <div className="flex mt-[2rem] justify-center items-center align-middle mx-auto">
+
+      <Footer/>
+      </div>
+      </>
+      )}
     </div>
   );
 };

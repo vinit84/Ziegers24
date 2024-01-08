@@ -1,13 +1,15 @@
 import React from "react";
 // import transition from "../transition";
 import Navbar from "./navbar.jsx";
-import WebdevCard from "../assets/WebdevCard.png";
-import gamecard from "../assets/gamecard.png";
-import technutzcard from "../assets/technutzcard.png";
-import codexcard from "../assets/codexcard.png";
+import WebdevCard from "../assets/WebdevCard.webp";
+import gamecard from "../assets/gamecard.webp";
+import technutzcard from "../assets/technutzcard.webp";
+import codexcard from "../assets/codexcard.webp";
 import VanillaTilt from "vanilla-tilt";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import Footer from "./Footer.jsx";
+import transition from "../transition.js";
 
 const Eventpage = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -15,7 +17,7 @@ const Eventpage = () => {
   const [showSecondCard, setShowSecondCard] = useState(false);
   const [showThirdCard, setShowThirdCard] = useState(false);
   const [showFourthCard, setShowFourthCard] = useState(false);
-  const mainRef = useRef(null);
+  // const mainRef = useRef(null);
 
   const navigate = useNavigate();
 
@@ -34,11 +36,13 @@ const Eventpage = () => {
 
   useEffect(() => {
     const createDiv = () => {
-      const scene = document.querySelector(".scene");
-      for (let i = 0; i < 210; i++) {
-        const div = document.createElement("div");
-        scene.appendChild(div);
-      }
+      // const scene = document.querySelector(".scene");
+      // for (let i = 0; i < 210; i++) {
+      //   const div = document.createElement("div");
+      //   scene.appendChild(div);
+      // }
+
+      document.title = "Ziegers-Events";
 
       const tiltElements = document.querySelectorAll(".tilt");
       tiltElements.forEach((element) => {
@@ -53,43 +57,43 @@ const Eventpage = () => {
 
     createDiv();
 
-    const setStarsProperties = () => {
-      const stars = document.querySelectorAll(".scene div");
-      stars.forEach((star) => {
-        let x = `${Math.random() * 200}vmax`;
-        let y = `${Math.random() * 100}vh`;
-        let z = `${Math.random() * 200 - 100}vmin`;
-        let rx = `${Math.random() * 360}deg`;
-        star.style.setProperty("--x", x);
-        star.style.setProperty("--y", y);
-        star.style.setProperty("--z", z);
-        star.style.setProperty("--rx", rx);
-        let delay = `${Math.random() * 1.5}s`;
-        star.style.animationDelay = delay;
-      });
-    };
+    // const setStarsProperties = () => {
+    //   const stars = document.querySelectorAll(".scene div");
+    //   stars.forEach((star) => {
+    //     let x = `${Math.random() * 200}vmax`;
+    //     let y = `${Math.random() * 100}vh`;
+    //     let z = `${Math.random() * 200 - 100}vmin`;
+    //     let rx = `${Math.random() * 360}deg`;
+    //     star.style.setProperty("--x", x);
+    //     star.style.setProperty("--y", y);
+    //     star.style.setProperty("--z", z);
+    //     star.style.setProperty("--rx", rx);
+    //     let delay = `${Math.random() * 1.5}s`;
+    //     star.style.animationDelay = delay;
+    //   });
+    // };
 
-    setStarsProperties();
+    // setStarsProperties();
     setTimeout(() => {
       setShowNavbar(true);
-      const mainElement = mainRef.current;
-      mainElement.classList.add("blurred");
+      // const mainElement = mainRef.current;
+      // mainElement.classList.add("blurred");
       setTimeout(() => {
         setShowFirstCard(true);
-      }, 1000);
+      }, 700);
 
       setTimeout(() => {
         setShowSecondCard(true);
-      }, 2000);
+      }, 1400);
 
       setTimeout(() => {
         setShowThirdCard(true);
-      }, 3000);
+      }, 2100);
 
       setTimeout(() => {
         setShowFourthCard(true);
-      }, 4000);
-    }, 3000);
+      }, 2800);
+    }, 500);
   }, []);
 
   return (
@@ -152,14 +156,16 @@ const Eventpage = () => {
           </div>
         </div>
       </div>
-
+      {/* 
       <main
         ref={mainRef}
         className="scene main-container"
         style={{ position: "relative", zIndex: 0 }}
-      ></main>
+      ></main> */}
+
+      <Footer />
     </div>
   );
 };
 
-export default Eventpage;
+export default transition(Eventpage);

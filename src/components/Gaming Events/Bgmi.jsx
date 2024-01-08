@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import banner from "../../assets/bgmibanner.jpg";
 import mobilebanner from "../../assets/m-bgmibanner.png";
 import transition from "../../transition.js";
@@ -9,6 +9,9 @@ import sanhok from "../../assets/sanhokmap.png";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Footer from "../Footer.jsx";
+import { redirectToGamingForm } from "../redirect.js";
 
 const Bgmi = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -17,66 +20,80 @@ const Bgmi = () => {
       return { right: !menuOpened && "-100%" };
     }
   };
+
+  useEffect(() => {
+    document.title = "Ziegers-BGMI";
+  }, []);
+
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
+  const handleAboutclick = () => {
+    navigate("/about");
+  };
+
+
   return (
     <div className="wrapper ">
-        <nav
+      <nav
         className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between bg-[#000000CC] rounded-es-[100px] rounded-br-[100px] bg-opacity-80 absolute m-gaming-nav"
         style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
       >
         <OutsideClickHandler
-        onOutsideClick={() => {
-          setMenuOpened(false);
-        }}
-      >
-        <div className="flex flex-row justify-evenly items-center align-middle h-menus lg:mb-[1rem]  ml-[3rem]"  style={getMenuStyles(menuOpened)}>
-          <a
-            href="h"
-            className="flex justify-center items-center align-middle font-varino text-focus-in navbar-text"
+          onOutsideClick={() => {
+            setMenuOpened(false);
+          }}
+        >
+          <div
+            className="flex flex-row justify-evenly items-center align-middle h-menus lg:mb-[1rem]  ml-[3rem]"
+            style={getMenuStyles(menuOpened)}
           >
-            Contact
-          </a>
-          <svg
-            width="34"
-            height="34"
-            viewBox="0 0 34 34"
-            fill="none"
-            className="text-focus-in m-hide"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Huge-icon/arrows/outline/arrow-down">
-              <path
-                id="Vector 190"
-                d="M21.2722 18.4141V12.7573M21.2722 12.7573H15.6153M21.2722 12.7573L12.7869 21.2425"
-                stroke="#F3F3F3"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-          </svg>
-          <a href="h" className="font-varino ml-3 text-focus-i navbar-text">
-            About
-          </a>
-          <svg
-            width="34"
-            height="34"
-            className="text-focus-in m-hide"
-            viewBox="0 0 34 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Huge-icon/arrows/outline/arrow-down">
-              <path
-                id="Vector 190"
-                d="M21.2722 18.4141V12.7573M21.2722 12.7573H15.6153M21.2722 12.7573L12.7869 21.2425"
-                stroke="#F3F3F3"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-          </svg>
-        </div>
+            <div onClick={handleContactClick} className="flex cursor-pointer justify-center items-center align-middle font-varino text-focus-in navbar-text cursor-pointer">
+              Contact
+            </div>
+            <svg
+              width="34"
+              height="34"
+              viewBox="0 0 34 34"
+              fill="none"
+              className="text-focus-in m-hide"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Huge-icon/arrows/outline/arrow-down">
+                <path
+                  id="Vector 190"
+                  d="M21.2722 18.4141V12.7573M21.2722 12.7573H15.6153M21.2722 12.7573L12.7869 21.2425"
+                  stroke="#F3F3F3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+            <div onClick={handleAboutclick} className=" font-varino ml-3 text-focus-in navbar-text cursor-pointer">
+              About
+            </div>
+            <svg
+              width="34"
+              height="34"
+              className="text-focus-in m-hide"
+              viewBox="0 0 34 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Huge-icon/arrows/outline/arrow-down">
+                <path
+                  id="Vector 190"
+                  d="M21.2722 18.4141V12.7573M21.2722 12.7573H15.6153M21.2722 12.7573L12.7869 21.2425"
+                  stroke="#F3F3F3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </div>
         </OutsideClickHandler>
         <a
           href="/"
@@ -87,7 +104,8 @@ const Bgmi = () => {
         </a>
 
         <a
-          href="h"
+          href="https://www.instagram.com/ziegerscs"
+          target="_blank"
           className="m-hide text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[5rem] bg-[#B5B5B5] from-zinc-950  rounded-full shadow border border-[#B5B5B5] justify-start items-center inline-flex instagram-button mb-[0.5rem]"
         >
           <div className="w-4 h-4 relative flex-col justify-start items-start flex " />
@@ -111,16 +129,16 @@ const Bgmi = () => {
           </div>
         </a>
         <div
-        className="flex menu-icon cursor-pointer flex-row  justify-end mx-auto m-game-menu"
-        onClick={() => setMenuOpened((prev) => !prev)}
-      >
-        <img
-          src={menu}
-          alt="menu"
-          width="50px"
-          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2"
-        ></img>
-      </div>
+          className="flex menu-icon cursor-pointer flex-row  justify-end mx-auto m-game-menu"
+          onClick={() => setMenuOpened((prev) => !prev)}
+        >
+          <img
+            src={menu}
+            alt="menu"
+            width="50px"
+            className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2 text-focus-in"
+          ></img>
+        </div>
       </nav>
       <div className="font-varino">
         <div className="">
@@ -181,8 +199,8 @@ const Bgmi = () => {
                 Registration
                 <br />
                 Amount
-                <div className="text-slate-400 text-[13px] font-medium mt-[1rem]">
-                  Check in 15:00
+                <div className="text-slate-400 text-[13px] font-bold mt-[1rem] leading-0">
+                Prize Pool &nbsp; ₹1500
                 </div>
                 <div className="text-slate-400 text-[13px] font-medium">
                   No refund
@@ -218,7 +236,7 @@ const Bgmi = () => {
                     </div>
                   </div>
                   <div className="left-[30px] top-[30px] absolute text-white text-[20px] font-semibold">
-                    ₹100/Team
+                    ₹200/Team
                   </div>
                 </div>
               </div>
@@ -227,7 +245,7 @@ const Bgmi = () => {
           <div className="relative flex justify-center">
             <div className="flex justify-center bgmi-btn cursor-pointer absolute z-10 mx-auto bottom-[5.5rem] ">
               <div className="flex justify-center ">
-                <div className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 bg-[#D4C8BD] rounded-[100px] m-bgmi-btn ">
+                <div onClick={redirectToGamingForm} className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 bg-[#D4C8BD] rounded-[100px] m-bgmi-btn ">
                   <div className="left-[2rem] absolute text-neutral-900 text-[22px] font-semibold font-['Outfit'] m-participate-text">
                     Participate
                   </div>
@@ -261,8 +279,16 @@ const Bgmi = () => {
                 </div>
               </div>
             </div>
-            <img src={banner} alt="bgmibanner" className="w-screen m-hide"></img>
-            <img src={mobilebanner} alt="bgmibanner" className="w-screen lg:hidden"></img>
+            <img
+              src={banner}
+              alt="bgmibanner"
+              className="w-screen m-hide"
+            ></img>
+            <img
+              src={mobilebanner}
+              alt="bgmibanner"
+              className="w-screen lg:hidden"
+            ></img>
             <div className=" absolute w-[100vw] h-[300px] valorantbanneroverlay -bottom-32 flex justify-center items-center m-bgmi-overlay">
               <div className=" inline-flex lg:p-[25px] items-center lg:gap-5 lg:rounded-[22px] webdevvenuecard translate-y-[5rem] justify-center align-middle m-venue-box">
                 <div className="flex items-center lg:gap-2">
@@ -303,7 +329,7 @@ const Bgmi = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    10:00 AM to 12:00 PM
+                  (TBA) via WhatsApp
                   </div>
                 </div>
                 <div className="flex items-center lg:gap-2">
@@ -347,42 +373,39 @@ const Bgmi = () => {
         </div>
         <div className="bgmimaps flex flex-row justify-center gap-10 flex-wrap px-5">
           <div>
-            <img src={erangle} alt="erangle" className="w-[420px] h-[250px] m-bgmi-maps" />
+            <img
+              src={erangle}
+              alt="erangle"
+              className="w-[420px] h-[250px] m-bgmi-maps"
+            />
           </div>
           <div>
-            <img src={vikendi} alt="vikendi" className="w-[420px] h-[250px] m-bgmi-maps" />
+            <img
+              src={vikendi}
+              alt="vikendi"
+              className="w-[420px] h-[250px] m-bgmi-maps"
+            />
           </div>
           <div>
-            <img src={miramar} alt="miramar" className="w-[420px] h-[250px] m-bgmi-maps" />
+            <img
+              src={miramar}
+              alt="miramar"
+              className="w-[420px] h-[250px] m-bgmi-maps"
+            />
           </div>
           <div>
-            <img src={sanhok} alt="sanhok" className="w-[420px] h-[250px] m-bgmi-maps" />
+            <img
+              src={sanhok}
+              alt="sanhok"
+              className="w-[420px] h-[250px] m-bgmi-maps"
+            />
           </div>
         </div>
         <div className="text-[25px] font-readex text-center text-[#D4D4D4] tracking-[1.15px] font-semibold  m-bgmi-rule">
           There will be 3 matches held. Which ever team gets more points in all
           three matches will be declared as a winner.
         </div>
-        <div className="valorantmapselection w-[950px] m-mapselection">
-          <div className="p-[10px] flex flex-col gap-3 text-[#D4D4D4] tracking-[1.15px] text-[20px] font-inter text-center m-map-rules">
-            <div className="font-medium">
-              Map Selection Process for Best-of-One Matches:
-            </div>
-            <ul
-              className="flex flex-col gap-3 items-center text-center"
-              style={{ listStyleType: "disc" }}
-            >
-              <li> Team A bans 1 Map</li>
-              <li> Team B bans 1 Map</li>
-              <li> Team A bans 1 Map</li>
-              <li> Team B bans 1 Map</li>
-              <li> Team A bans 1 Map</li>
-              <li> Team B bans 1 Map</li>
-              <li> Map 7 is only Map remaining</li>
-              <li> Teams will be picking sides by toss</li>
-            </ul>
-          </div>
-        </div>
+        
         <div className="valorantnote text-[#D05555] text-center text-[20px] font-inter italic font-medium tracking-[1.15px] m-note">
           *NOTE: Any sort of damage to the property of Ziegers and the concerned
           authorities will not be tolerated and the one's responsible will be
@@ -390,6 +413,7 @@ const Bgmi = () => {
           the damage done.
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

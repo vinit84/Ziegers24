@@ -2,6 +2,7 @@ import React from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../assets/menu.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -10,10 +11,17 @@ function Navbar() {
       return { right: !menuOpened && "-100%" };
     }
   };
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
+  const handleAboutclick = () => {
+    navigate("/about");
+  };
 
   return (
     <nav
-      className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-5 pl-10  top-1 justify-between "
+      className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between "
       style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
     >
       <OutsideClickHandler
@@ -22,13 +30,13 @@ function Navbar() {
         }}
       >
         <div
-          className="flex flex-row align-middle  items-center text-[15px] h-menus z-50"
+          className="flex flex-row align-middle  items-center text-[15px] h-menus"
           style={getMenuStyles(menuOpened)}
         >
           <div className="flex justify-center items-center m-menu">
-            <a href="h" className="font-varino text-focus-in navbar-text">
+            <div onClick={handleContactClick} className="font-varino cursor-pointer text-focus-in navbar-text">
               Contact
-            </a>
+            </div>
             <svg
               width="34"
               height="34"
@@ -48,9 +56,9 @@ function Navbar() {
                 />
               </g>
             </svg>
-            <a href="h" className="font-varino lg:ml-3 text-focus-in navbar-text ">
+            <div onClick={handleAboutclick} className="cursor-pointer font-varino lg:ml-3 text-focus-in navbar-text ">
               About
-            </a>
+            </div>
             <svg
               width="34"
               height="34"
@@ -82,7 +90,8 @@ function Navbar() {
       </a>
 
       <a
-        href="h"
+         href="https://www.instagram.com/ziegerscs"
+         target="_blank"
         className="m-hide text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[3rem] bg-gradient-to-r from-zinc-950 to-blue-900 rounded-full shadow border border-blue-900 justify-start items-center inline-flex instagram-button"
       >
         <div className="w-4 h-4 relative flex-col justify-start items-start flex " />
@@ -113,7 +122,7 @@ function Navbar() {
           src={menu}
           alt="menu"
           width="50px"
-          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg"
+          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2 text-focus-in"
         ></img>
       </div>
     </nav>

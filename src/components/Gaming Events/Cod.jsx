@@ -6,6 +6,9 @@ import transition from "../../transition";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Footer from "../Footer";
+import { redirectToGamingForm } from "../redirect";
 
 const Cod = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -14,8 +17,15 @@ const Cod = () => {
       return { right: !menuOpened && "-100%" };
     }
   };
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
+  const handleAboutclick = () => {
+    navigate("/about");
+  };
   return (
-    <section className="bg-[#0A0A0B] overflow-x-hidden">
+    <section className="bg-[#0A0A0B] overflow-x-hidden wrapper ">
        <nav
         className="flex text-[#fff] flex-row  items-center align-middle mx-auto pt-2 pl-10 justify-between bg-[#000000CC] rounded-es-[100px] rounded-br-[100px] bg-opacity-80 absolute m-gaming-nav"
         style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 15 }}
@@ -26,12 +36,12 @@ const Cod = () => {
         }}
       >
         <div className="flex flex-row justify-evenly items-center align-middle h-menus lg:mb-[1rem]  ml-[3rem]"  style={getMenuStyles(menuOpened)}>
-          <a
-            href="h"
-            className="flex justify-center items-center align-middle font-varino text-focus-in navbar-text"
+          <div
+            onClick={handleContactClick}
+            className="flex justify-center cursor-pointer items-center align-middle font-varino text-focus-in navbar-text"
           >
             Contact
-          </a>
+          </div>
           <svg
             width="34"
             height="34"
@@ -51,9 +61,9 @@ const Cod = () => {
               />
             </g>
           </svg>
-          <a href="h" className="font-varino ml-3 text-focus-i navbar-text">
+          <div onClick={handleAboutclick} className="cursor-pointer font-varino ml-3 text-focus-in navbar-text">
             About
-          </a>
+          </div>
           <svg
             width="34"
             height="34"
@@ -84,7 +94,8 @@ const Cod = () => {
         </a>
 
         <a
-          href="h"
+          href="https://www.instagram.com/ziegerscs"
+          target="_blank"
           className="m-hide text-focus-in w-[150px] h-[47px] pl-[3px] pr-[13px] mr-[5rem] bg-[#D6014C] from-zinc-950  rounded-full shadow border border-[#D6014C] justify-start items-center inline-flex instagram-button mb-[0.5rem]"
         >
           <div className="w-4 h-4 relative flex-col justify-start items-start flex " />
@@ -115,7 +126,7 @@ const Cod = () => {
           src={menu}
           alt="menu"
           width="50px"
-          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2"
+          className="flex border border-solid  m-burger border-[#F3F3F3] rounded-lg m-burger2 text-focus-in"
         ></img>
       </div>
       </nav>
@@ -178,8 +189,8 @@ const Cod = () => {
                 Registration
                 <br />
                 Amount
-                <div className="text-slate-400 text-[13px] font-medium mt-[1rem]">
-                  Check in 15:00
+                <div className="text-slate-400 text-[15px] font-medium mt-[1rem]">
+                Prize Pool 1K
                 </div>
                 <div className="text-slate-400 text-[13px] font-medium">
                   No refund
@@ -225,8 +236,8 @@ const Cod = () => {
           <div className="relative flex justify-center">
             <div className="flex justify-center cod-btn cursor-pointer absolute z-10 mx-auto bottom-[8.5rem]">
               <div className="flex justify-center ">
-                <div className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 bg-[#D6014C] rounded-[100px] m-cod-btn ">
-                  <div className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
+                <div onClick={redirectToGamingForm} className="w-[235px] h-[65px] text-center flex flex-row items-center  left-0 top-0 bg-[#D6014C] rounded-[100px] m-cod-btn ">
+                  <div  className="left-[2rem] absolute text-white text-[22px] font-semibold font-['Outfit'] m-participate-text">
                     Participate
                   </div>
                   <div className="flex align-middle ">
@@ -301,7 +312,7 @@ const Cod = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    10:00 AM to 12:00 PM
+                  (TBA) via WhatsApp
                   </div>
                 </div>
                 <div className="flex items-center lg:gap-2">
@@ -430,7 +441,6 @@ const Cod = () => {
               <li> Persistence Perks Not Allowed</li>
               <li> No Emotes Are Allowed </li>
               <li> No New Guns Are Allowed(Such as Groza) </li>
-              <li> Map 7 is only Map remaining </li>
               <li>
                 {" "}
                 Download the Ranked Maps (Map will be decided by
@@ -445,6 +455,10 @@ const Cod = () => {
           sanctioned with penalties and can also be charged a fine depending on
           the damage done.
         </div>
+      </div>
+      <div className="flex mt-[5rem]">
+
+      <Footer/>
       </div>
     </section>
   );

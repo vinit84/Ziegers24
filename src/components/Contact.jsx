@@ -1,13 +1,17 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import banner from '../../src/assets/contactbanner.svg';
 import logo from '../../src/assets/ZiegersLogo2.png';
 import transition from '../transition';
+import Footer from './Footer';
 const Contact = () => {
+  useEffect(() => {
+    document.title = "Ziegers-Contact";
+  }, []);
   return (
     <div className='overflow-hidden max-h-screen'>
       <div className='m-contact-page'>
-        <div className='text-white text-center font-varino text-[70px] mt-10 m-contactus'>CONTACT US</div>
+        <div className='text-white text-center font-varino text-[70px] lg:mt-10 m-contactus'>CONTACT US</div>
         <div className="flex flex-col justify-center items-center gap-3">
           <div className=''>
             <img src={logo} alt='contact-logo' className='w-[150px] m-contact-logo'/>
@@ -17,7 +21,7 @@ const Contact = () => {
           </div>
           <div className='flex flex-row justify-around max-w-[800px] gap-20 flex-wrap m-support'>
               <div className='flex flex-col items-center justify-center text-center gap-4 m-support-sec'>
-                <div className='text-white text-center font-readex text-[17px] font-bold tracking-[-1.8px] m-support-text'>
+                <div className='text-white text-center font-readex text-[17px] font-bold  m-support-text'>
                   Support
                 </div>
                 <div className='flex flex-row justify-center items-center gap-2'>
@@ -27,11 +31,11 @@ const Contact = () => {
                     <path d="M37.9727 20.9931C37.8775 20.9467 37.7719 20.9311 37.6687 20.9484C37.5654 20.9656 37.469 21.0148 37.391 21.0902L28.0007 30.1543L18.6109 21.0896C18.5328 21.0141 18.4363 20.9648 18.333 20.9475C18.2297 20.9303 18.124 20.9458 18.0287 20.9923C17.9333 21.0388 17.8524 21.1143 17.7957 21.2096C17.739 21.305 17.7089 21.4161 17.709 21.5296V35.6472C17.709 35.8032 17.7661 35.9529 17.8676 36.0632C17.9692 36.1735 18.107 36.2355 18.2507 36.2355C18.3943 36.2355 18.5321 36.1735 18.6337 36.0632C18.7352 35.9529 18.7923 35.8032 18.7923 35.6472V22.8396L27.6404 31.3808C27.7396 31.4765 27.8677 31.5294 28.0004 31.5294C28.1331 31.5294 28.2612 31.4765 28.3603 31.3808L37.209 22.8396V35.059C37.209 35.215 37.2661 35.3646 37.3676 35.4749C37.4692 35.5853 37.607 35.6472 37.7507 35.6472C37.8943 35.6472 38.0321 35.5853 38.1337 35.4749C38.2353 35.3646 38.2923 35.215 38.2923 35.059V21.5296C38.2923 21.4162 38.2621 21.3053 38.2054 21.2101C38.1487 21.115 38.0679 21.0396 37.9727 20.9931Z" fill="white"/>
                     <path d="M27.65 27.8605C27.7478 27.9504 27.8718 27.9997 27.9999 27.9997C28.1281 27.9997 28.2521 27.9504 28.3499 27.8605L35.3915 21.3899C35.4974 21.288 35.5624 21.1451 35.5725 20.9917C35.5826 20.8384 35.5371 20.6869 35.4456 20.5696C35.3542 20.4523 35.2241 20.3786 35.0832 20.3641C34.9423 20.3496 34.8018 20.3956 34.6917 20.4923L27.9999 26.6411L21.3082 20.4923C21.2542 20.4403 21.1912 20.4005 21.1228 20.3754C21.0545 20.3502 20.9822 20.3401 20.9102 20.3457C20.8382 20.3513 20.768 20.3725 20.7036 20.408C20.6393 20.4435 20.5821 20.4926 20.5355 20.5524C20.4889 20.6122 20.4537 20.6815 20.4321 20.7563C20.4105 20.8311 20.4028 20.9098 20.4096 20.9878C20.4164 21.0658 20.4375 21.1416 20.4716 21.2106C20.5057 21.2797 20.5522 21.3407 20.6084 21.3899L27.65 27.8605Z" fill="white"/>
                   </svg>
-                  <div className='text-white text-center font-readex text-[17px] font-bold contact-text m-support-text'>siesziegers@gmail.com</div>
+                  <div className='text-white text-center font-readex text-[17px] font-bold contact-text m-support-text'>support@ziegerscs.com</div>
                 </div>
               </div>
               <div className='flex flex-col items-center gap-4 m-social-sec'>
-                <div className='text-white text-center font-readex text-[17px] font-bold tracking-[-1.8px] m-support-text'>Socials</div>
+                <div className='text-white text-center font-readex text-[17px] font-bold  m-support-text'>Socials</div>
                 <div className='flex flex-row justify-center items-center gap-2'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" className='m-contact-insta' viewBox="0 0 56 56" fill="none">
                     <circle cx="28" cy="28" r="28" fill="#0B0C10"/>
@@ -44,6 +48,7 @@ const Contact = () => {
         </div>
         <img src={banner} alt='contactbanner' className='w-screen translate-y-4 m-contact-banner' />
       </div>
+      <Footer/>
     </div>
   )
 }
