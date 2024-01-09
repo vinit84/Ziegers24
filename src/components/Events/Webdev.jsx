@@ -352,7 +352,7 @@ const Webdev = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    9:00 AM to 11:00 PM
+                    9:00 AM to 11:00 AM
                   </div>
                 </div>
                 <div className="flex items-center lg:gap-2">
@@ -382,7 +382,7 @@ const Webdev = () => {
       </div>
       <div className="max-w-[1300px] lg:mt-[9rem] mb-20 flex flex-col justify-center items-center mx-auto gap-24 z-10">
         <div className="text-center text-[#D6D6D6E5] font-readex text-[18px] font-medium w-[800px] m-webdev-desc">
-          Join us for an exciting web development competition on the 18th of
+          Join us for an exciting web development competition on the 19th of
           January 2024, where participants will showcase their skills in either
           website development using their preferred framework or the
           fundamentals of HTML and CSS. This single-round event offers a unique
