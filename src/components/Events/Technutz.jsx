@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import banner from "../../assets/technutzbanner.jpg";
-import mobilebanner from "../../assets/m-technutzbanner.png";
+import banner from "../../assets/technutzbanner.webp";
+import mobilebanner from "../../assets/m-technutzbanner.webp";
 import transition from "../../transition.js";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";

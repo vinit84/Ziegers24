@@ -1,7 +1,7 @@
 
 import React from "react";
-import banner from "../../assets/codbanner.png";
-import mobilebanner from "../../assets/m-codbanner.png";
+import banner from "../../assets/codbanner.webp";
+import mobilebanner from "../../assets/m-codbanner.webp";
 import transition from "../../transition";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";

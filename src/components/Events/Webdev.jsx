@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import banner from "../../assets/webdevbanner.jpg";
-import mobilebanner from "../../assets/m-webdevbanner.png";
-import codecraft from "../../assets/codecraft.png";
-import designsprint from "../../assets/designsprint.png";
+import banner from "../../assets/webdevbanner.webp";
+import mobilebanner from "../../assets/m-webdevbanner.webp";
+import codecraft from "../../assets/codecraft.webp";
+import designsprint from "../../assets/designsprint.webp";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";
 import { useState } from "react";

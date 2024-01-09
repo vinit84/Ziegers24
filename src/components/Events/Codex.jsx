@@ -1,7 +1,7 @@
 
 import React, { useEffect } from "react";
-import banner from "../../assets/codexbanner.jpg";
-import mobilebanner from "../../assets/m-codexbanner.png";
+import banner from "../../assets/codexbanner.webp";
+import mobilebanner from "../../assets/m-codexbanner.webp";
 import transition from "../../transition";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";

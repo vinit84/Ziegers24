@@ -1,7 +1,7 @@
 
 import React from "react";
-import banner from "../../assets/valorantbanner.png";
-import mobilebanner from "../../assets/m-valorantbanner.png";
+import banner from "../../assets/valorantbanner.webp";
+import mobilebanner from "../../assets/m-valorantbanner.webp";
 import transition from "../../transition.js";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";

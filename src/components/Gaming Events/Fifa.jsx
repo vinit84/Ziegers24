@@ -1,7 +1,7 @@
 
 import React from "react";
-import banner from "../../assets/fifabanner.png";
-import mobilebanner from "../../assets/m-fifabanner.png";
+import banner from "../../assets/fifabanner.webp";
+import mobilebanner from "../../assets/m-fifabanner.webp";
 import transition from "../../transition.js";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import banner from "../../assets/bgmibanner.jpg";
-import mobilebanner from "../../assets/m-bgmibanner.png";
+import banner from "../../assets/bgmibanner.webp";
+import mobilebanner from "../../assets/m-bgmibanner.webp";
 import transition from "../../transition.js";
-import erangle from "../../assets/eranglemap.png";
-import vikendi from "../../assets/vikendimap.png";
-import miramar from "../../assets/miramarmap.png";
-import sanhok from "../../assets/sanhokmap.png";
+import erangle from "../../assets/eranglemap.webp";
+import vikendi from "../../assets/vikendimap.webp";
+import miramar from "../../assets/miramarmap.webp";
+import sanhok from "../../assets/sanhokmap.webp";
 import OutsideClickHandler from "react-outside-click-handler";
 import menu from "../../assets/menu.svg";
 import { useState } from "react";

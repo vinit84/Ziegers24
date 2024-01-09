@@ -1,8 +1,8 @@
 
-import logo from "../../src/assets/ZiegersLogo.png";
-import stars from "../../src/assets/stars.png";
-import stroke from "../../src/assets/strokes.png";
-import sphere1 from "../../src/assets/planet.png";
+import logo from "../../src/assets/ZiegersLogo.webp";
+import stars from "../../src/assets/stars.webp";
+import stroke from "../../src/assets/strokes.webp";
+import sphere1 from "../../src/assets/planet.webp";
 import sphere2 from "../../src/assets/planet2.svg";
 import sphere3 from "../../src/assets/planet3.svg";
 import { useNavigate } from "react-router-dom";

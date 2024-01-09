@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react'
 import banner from '../../src/assets/contactbanner.svg';
-import logo from '../../src/assets/ZiegersLogo2.png';
+import logo from '../../src/assets/ZiegersLogo2.webp';
 import transition from '../transition';
 import Footer from './Footer';
 const Contact = () => {
