@@ -331,7 +331,7 @@ const Webdev = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    18th January
+                    19th January
                   </div>
                 </div>
                 <div className="flex items-center lg:gap-2">
@@ -352,7 +352,7 @@ const Webdev = () => {
                     />
                   </svg>
                   <div className=" font-readex text-[#F3F3F3]">
-                    10:00 AM to 12:00 PM
+                    9:00 AM to 11:00 PM
                   </div>
                 </div>
                 <div className="flex items-center lg:gap-2">
