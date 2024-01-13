@@ -1,10 +1,6 @@
-Certainly! Below is a template for a simple GitHub repository README for your college fest website project:
-
----
-
 # Sci-Fi College Fest Website
 
-![Sci-Fi College Fest](https://link-to-your-image.com)
+![Ziegres'24](https://link-to-your-image.com)
 
 ## Overview
 
@@ -27,14 +23,21 @@ This project is a website developed for our college fest, themed around sci-fi a
 
 ## Technologies Used
 
-- Frontend: HTML, CSS, JavaScript
-- Deployment: Hostinger
+- **Frontend:**
+  - [ReactJS](https://reactjs.org/): A JavaScript library for building user interfaces.
+  - [Framer Motion](https://www.framer.com/motion/): A React animation library for creating delightful animations.
+  - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework.
+
+- **Design:**
+  - [Figma](https://www.figma.com/): Collaborative interface design tool.
+
+- **Deployment:** [Hostinger](https://www.hostinger.com/)
 
 ## Getting Started
 
 To get a copy of the project up and running on your local machine, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/vinit84e/ziegers24.git`
+1. Clone the repository: `https://github.com/vinit84/Ziegers24.git`
 2. Install dependencies: `npm install` (or any other necessary commands)
 3. Start the development server: `npm start` (or any other necessary commands)
 
