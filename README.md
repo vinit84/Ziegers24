@@ -1,6 +1,6 @@
 # Sci-Fi College Fest Website
 
-![Ziegers'24](https://ziegerscs.com)
+![Ziegers'24](https://ziegerscs.com/)
 
 ## Overview
 
