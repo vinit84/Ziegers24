@@ -1,6 +1,7 @@
 # Ziegers'24 College Fest Website
 
-![ZiegersLogo](https://ziegerscs.com/static/media/ZiegersLogo2.963dc1e675cbb40002b2.webp){:width="200px"}
+![ZiegersLogo]<img src="https://ziegerscs.com/static/media/ZiegersLogo2.963dc1e675cbb40002b2.webp" width="200">
+
 
 ## Overview
 
