@@ -1,4 +1,4 @@
-# Sci-Fi College Fest Website
+# Ziegers'24 College Fest Website
 
 ![ZiegersLogo](https://ziegerscs.com/static/media/ZiegersLogo.4e21822b4228767f2df8.webp)
 
