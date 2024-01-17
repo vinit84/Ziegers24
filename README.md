@@ -1,5 +1,7 @@
 # Sci-Fi College Fest Website
 
+![ZiegersLogo](https://ziegerscs.com/static/media/ZiegersLogo.4e21822b4228767f2df8.webp)
+
 ## Overview
 
 This project is a website developed for our college fest, themed around sci-fi and space exploration. The website provides information about various events happening during the fest, allowing users to explore details and register for their preferred events.
